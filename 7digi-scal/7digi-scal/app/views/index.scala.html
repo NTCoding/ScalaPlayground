@@ -1,7 +1,11 @@
-@(message: String)
+@(chart: List[Track])
+
+@import models.Track
 
 @main("Welcome to Play 2.0") {
     
-    @play20.welcome(message)
+    @chart.map { track =>
+        <p>There is a track</p>
+    }
     
 }
