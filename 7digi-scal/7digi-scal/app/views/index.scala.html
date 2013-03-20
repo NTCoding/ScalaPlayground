@@ -5,7 +5,11 @@
 @main("Welcome to Play 2.0") {
     
     @chart.map { track =>
-        <p>There is a track</p>
+        <ul>
+            <li>@track.title</li>
+            <li>@track.artist</li>
+            <li><img src="@track.image" /></li>
+        </ul>
     }
     
 }
