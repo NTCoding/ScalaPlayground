@@ -1,4 +1,4 @@
-@(chart: List[Track])
+@(chart: Seq[Track])
 
 @import models.Track
 
@@ -7,7 +7,7 @@
     @chart.map { track =>
         <ul>
             <li>@track.title</li>
-            <li>@track.artist</li>
+            <li><a href="@track.artistUrl">@track.artist</a></li>
             <li><img src="@track.image" /></li>
         </ul>
     }

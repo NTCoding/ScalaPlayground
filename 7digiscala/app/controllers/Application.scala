@@ -59,7 +59,15 @@ object Application extends Controller
        				 .getElementsByTagName("image")
        				 .item(0)
        				 .getTextContent()
+       				 
+       val artistUrl = tag
+       					.getElementsByTagName("artist")
+       					.item(0)
+       					.asInstanceOf[Element]
+       					.getElementsByTagName("url")
+       					.item(0)
+       					.getTextContent()
     	
-        new Track(title, artist, image)
+        new Track(title, artist, image, artistUrl)
     }
  }

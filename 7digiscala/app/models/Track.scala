@@ -1,8 +1,9 @@
 package models
 
-class Track(ctitle: String, cartist: String, cimage: String)
+class Track(ctitle: String, cartist: String, cimage: String, cartistUrl: String)
 {
-     var title: String = ctitle
-     var artist: String = cartist
-     var image: String = cimage
+     val title: String = ctitle
+     val artist: String = cartist
+     val image: String = cimage
+     val artistUrl : String = cartistUrl
 }
