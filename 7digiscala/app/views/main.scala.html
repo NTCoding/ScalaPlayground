@@ -1,4 +1,4 @@
-@(headertools: Html)(content: Html)
+@(content: Html)
 
 <!DOCTYPE HTML>
 <html lang="en">
@@ -44,7 +44,16 @@
     <!-- Header -->
 
     <header id="header-container">
-    	@headertools
+    	<ul id="header-tools-container">
+		<li id="header-tools-search-container">
+			<form method="get" action="/search">
+				<label id="header-tools-search-label">
+					<input id="header-tools-search-input" type="search" name="term" />
+				</label>
+				<button id="header-tools-search-button" class="cta" type="submit"> Search </button>
+			</form>
+		</li>
+	</ul>
         <nav id="header-navigation">
             <ul class="floated-list header-navigation-constraint" id="site-nav" role="navigation">
                 <li id="header-navigation-left-watermark"></li>
