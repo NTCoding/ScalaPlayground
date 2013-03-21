@@ -1,4 +1,4 @@
-@(content: Html)
+@(headertools: Html)(content: Html)
 
 <!DOCTYPE HTML>
 <html lang="en">
@@ -44,6 +44,7 @@
     <!-- Header -->
 
     <header id="header-container">
+    	@headertools
         <nav id="header-navigation">
             <ul class="floated-list header-navigation-constraint" id="site-nav" role="navigation">
                 <li id="header-navigation-left-watermark"></li>

@@ -1,0 +1,17 @@
+@(chart: Seq[Track])
+
+@import models.Track
+
+@headertools = {
+	<ul></ul>
+}
+
+@main(headertools) {
+<div>
+	@chart.map{track =>
+		<ul>
+			<li>@track.title</li>
+		</ul>
+	}
+</div>    
+}

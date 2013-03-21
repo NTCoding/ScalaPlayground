@@ -2,7 +2,24 @@
 
 @import models.Track
 
-@main {
+
+@headertools = {
+
+	<ul id="header-tools-container">
+		<li id="header-tools-search-container">
+			<form method="get" action="/search">
+				<label id="header-tools-search-label">
+					<input id="header-tools-search-input" type="search" name="term" />
+				</label>
+				<button id="header-tools-search-button" class="cta" type="submit"> Search </button>
+			</form>
+		</li>
+	</ul>
+
+}
+
+@main(headertools) {
+
 <div class="storefront">
 	<div id="feature-carousel" class="first carousel static-carousel feature-carousel">
 		<ul class="first column carousel-tabs">
@@ -33,6 +50,8 @@
 		
 	</div>
 </div>    
-     
-    
-}
+
+} 
+
+
+
