@@ -25,6 +25,7 @@ object Application extends Controller
                        .setQueryParameter("period", "week")
                        .setQueryParameter("oauth_consumer_key", "test-api")
                        .setQueryParameter("toDate", "20120301")
+                       .setQueryParameter("imageSize", "100")
                        .get
                        .get()
                        .asXml()
