@@ -21,7 +21,7 @@ object Search extends Controller
     		  		   .get()
     		  		   .getBody()
     		  		   
-      val tracks = TrackParser.parseChartItem(response)
+      val tracks = TrackParser.parseSearchResult(response)
       Ok(views.html.search(tracks, term))
   }
 }
