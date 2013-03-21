@@ -1,9 +1,10 @@
 package controllers
 
-import play.api._
+
 import play.api.mvc._
-import play.libs._
 import models._
+import play.libs._
+import org.w3c._
 
 
 object Application extends Controller
@@ -17,15 +18,27 @@ object Application extends Controller
 
     private def get7digitalTrackChart(): List[Track] =
     {
-      val chartUrl = "http://api.7digital.com/1.2/track/chart?period=week&toDate=20120301&oauth_consumer_key=YOUR_KEY_HERE&country=GB&pagesize=2"
-      val response = WS.url(chartUrl).get.get().getBody
+      val response = WS.url("http://api.7digital.com/1.2/track/chart")
+                       .setQueryParameter("period", "week")
+                       .setQueryParameter("oauth_consumer_key", "test-api")
+                       .setQueryParameter("toDate", "20120301")
+                       .get
+                       .get()
+                       .asXml()
+
       val tracks =  parseTracks(response)
       tracks
     }
 
-    private def parseTracks(body: String) : List[Track] =
+    private def parseTracks(body: Document) : List[Track] =
     {
+        val trackTags = body.getElementsByTagName("track");
+        val tracks = (0 until trackTags.length).foreach({ i => buildTrack(trackTags[i]) })
         List( new Track("wicked", "big", "blazin"))
     }
 
+    private def buildTrack(tag: Node) : Track =
+    {
+        new Track("title", "artist", "image")
+    }
  }

@@ -24,7 +24,8 @@ object Application extends Controller
     }
 
     private def parseTracks(body: String) : List[Track] =
-    {
+     {
+        WS.url("").
         List( new Track("wicked", "big", "blazin"))
     }
 
