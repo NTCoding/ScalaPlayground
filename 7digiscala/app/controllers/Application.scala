@@ -29,9 +29,9 @@ object Application extends Controller
                        .setQueryParameter("imageSize", "100")
                        .get
                        .get()
-                       .asXml()
+                       .getBody()
 
-      val tracks =  TrackParser.parse(response)
+      val tracks =  TrackParser.parseChartItem(response)
       tracks
     }
 

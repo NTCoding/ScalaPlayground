@@ -19,9 +19,9 @@ object Search extends Controller
     		  		   .setQueryParameter("imagesize", "50")
     		  		   .get
     		  		   .get()
-    		  		   .asXml()
+    		  		   .getBody()
     		  		   
-      val tracks = TrackParser.parse(response)
+      val tracks = TrackParser.parseChartItem(response)
       Ok(views.html.search(tracks, term))
   }
 }
