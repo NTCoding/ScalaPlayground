@@ -1,13 +1,62 @@
-@(chart: Seq[Track])
+@(results: Seq[Track], term: String)
 
 @import models.Track
 
 @main {
 <div>
-	@chart.map{track =>
-		<ul>
-			<li>@track.title</li>
-		</ul>
-	}
+	<h1 class="first width4">Results of your search for "@term"</h1>
+	<div class="first column width3">
+	<ul class="tabs floated-list">
+		<li id="tracks-tab" class="current">
+			Tracks
+		</li>
+	</ul>
+	<div id="catalogue" class="first">
+		<div class="tabbedcontent current">
+			<table class="productlist">
+				<thead>
+					<tr>
+						<th class="trackart">
+						<th class="trackname">
+							<span>Title</span>
+						</th>
+						<th class="trackreleasedate">
+							<span>Released</span>
+						</th>
+						<th class="trackrating">
+							<span>Popularity</span>
+						</th>
+						<th class="trackformat">
+							<span>Format</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@results.map{track =>
+						<tr>
+							<td class="trackart">
+								<div class="packshot">
+									<a class="title" href="">
+										<img width="50" height="50" src="@track.image" />
+									</a>
+								</div>
+							</td>
+							<td class="trackname">
+								<span class="search-result">
+									<a class="title focus-text" href="@track.artistUrl">@track.artist</a>
+								</span>
+							</td>
+							<td class="trackreleasedate"></td>
+							<td class="trackrating"></td>
+							<td class="trackformat">
+								<span class="format small mp3">MP3</span>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>	
+	</div>
 </div>    
 }

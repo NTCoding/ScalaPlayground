@@ -16,11 +16,12 @@ object Search extends Controller
     		  		   .setQueryParameter("q", term)
     		  		   .setQueryParameter("oauth_consumer_key", "test-api")
     		  		   .setQueryParameter("pagesize", "10")
+    		  		   .setQueryParameter("imagesize", "50")
     		  		   .get
     		  		   .get()
     		  		   .asXml()
     		  		   
       val tracks = TrackParser.parse(response)
-      Ok(views.html.search(tracks))
+      Ok(views.html.search(tracks, term))
   }
 }
