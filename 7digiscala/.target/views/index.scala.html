@@ -12,14 +12,18 @@
 		</ul>
 		<div class="first scrollable horizontal-scrollable">
 			<div class="pages floated-list">
-				<ul class="page itemcount-@tracks.getLength()">
+				<ul class="page itemcount-@chart.size">
 				 @chart.map { track =>
 		       		<li class="unit">
 						<div class="packshot">
 							<a href="@track.artistUrl" class="packshot-link">
-								<img class="packshot-image" width="100" height="100" src="@track.image"
+								<img class="packshot-image" width="100" height="100" src="@track.image" />
 							</a>
 						</div>
+						<p class="unit-title">
+							<a class="title" href="">@track.title</a>
+						</p>
+						by <a class="artist" href="@track.artistUrl">@track.artist</a>
 					</li>
 	       		 }
 				</ul>
