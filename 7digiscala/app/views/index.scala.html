@@ -2,14 +2,32 @@
 
 @import models.Track
 
-@main("Welcome to Play 2.0") {
-    
-    @chart.map { track =>
-        <ul>
-            <li>@track.title</li>
-            <li><a href="@track.artistUrl">@track.artist</a></li>
-            <li><img src="@track.image" /></li>
-        </ul>
-    }
+@main {
+<div class="storefront">
+	<div id="feature-carousel" class="first carousel static-carousel feature-carousel">
+		<ul class="first column carousel-tabs">
+			<li class="active">
+				<a class="heading"><span class="c">Track chart</span></a>
+			</li>
+		</ul>
+		<div class="first scrollable horizontal-scrollable">
+			<div class="pages floated-list">
+				<ul class="page itemcount-@chart.size">
+				 @chart.map { track =>
+		       		<li class="unit">
+						<div class="packshot">
+							<a href="@track.artistUrl" class="packshot-link">
+								<img class="packshot-image" width="100" height="100" src="@track.image" />
+							</a>
+						</div>
+					</li>
+	       		 }
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</div>    
+     
     
 }
