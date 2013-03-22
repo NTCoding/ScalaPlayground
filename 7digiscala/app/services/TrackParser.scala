@@ -9,14 +9,14 @@ import scala.xml.NodeSeq
 
 object TrackParser 
 {
-	def parseChartItem(body: String) : Seq[Track] =
+    def parseChartItem(body: String) : Seq[Track] =
     {
-	    val trackTags = XML.loadString(body) \\ "chartItem"
+	val trackTags = XML.loadString(body) \\ "chartItem"
         val tracks = trackTags.map(tag => buildTrack(tag))
         tracks
     }
 
-	def parseSearchResult(body: String) : Seq[Track] =
+    def parseSearchResult(body: String) : Seq[Track] =
     {
       val trackTags = XML.loadString(body) \\ "searchResult"
       val tracks = trackTags.map(tag => buildTrack(tag))
@@ -27,7 +27,7 @@ object TrackParser
     {
     	val title = tag \ "title" text
        	val artist = tag \ "track" \ "artist" \ "name" text
-   		val image = tag \ "track" \ "release" \ "image" text
+       	val image = tag \ "track" \ "release" \ "image" text
         val artistUrl = tag \ "artist" \ "url" text
        					    	
         new Track(title, artist, image, artistUrl)
