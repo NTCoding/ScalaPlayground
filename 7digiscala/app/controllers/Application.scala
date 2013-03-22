@@ -13,18 +13,15 @@ import play.api.mvc.Controller
 import play.api.mvc.Action
 
 
-
-object Application extends Controller
+object Application extends Controller 
 {
   
-    def index = Action  { implicit request =>
-    		val chart = get7digitalTrackChart()
-    		render{
-    			case Accepts.Html() => Ok(views.html.index(chart))
-    			case Accepts.Json() => Ok(Json.obj("tracks" -> Json.arr(
-    					chart.map(t => Json.obj("title" -> t.title, "artist" -> t.artist, "artistUrl" -> t.artistUrl, "image" -> t.image))
-    			)))
-    		}
+    def index = Action      { implicit request =>
+			val chart = get7digitalTrackChart()
+			render {
+				case Accepts.Html() => Ok(views.html.index(chart))
+				case Accepts.Json() => Ok(TrackFormatter.toJson(chart))
+			}
     }
 
     private def get7digitalTrackChart(): Seq[Track] =
@@ -42,4 +39,4 @@ object Application extends Controller
 			tracks
     }
 
- }
+}
