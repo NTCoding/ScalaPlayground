@@ -1,6 +1,6 @@
 package thermal_analyser
 
-class Analyser {
+class Analyser(private val parser: ArgsParser, private val calc: ScoreCalculator, private val formatter: ResultFormatter) {
 
-	def analyse(requirementAndGrid: String) = ""
+	def analyse(sizeAndGrid: String) = ""
 }
