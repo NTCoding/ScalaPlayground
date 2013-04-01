@@ -19,7 +19,7 @@ class Analysert_Test {
 	val formatter = mock(classOf[ResultFormatter])
 	val analyser = new Analyser(parser, calc, formatter)
 	
-	@BeforeClass
+	@Before
 	def when_given_valid_input {
 
 		val input = "1 2 3 4 5 6 7 8 9"
