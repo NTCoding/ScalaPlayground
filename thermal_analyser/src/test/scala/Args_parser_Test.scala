@@ -18,7 +18,7 @@ class Args_parser_Test {
 	}
 
 	@Test
-	def parser_2x2_grid_with_2_results {
+	def parses_2x2_grid_with_2_results {
 
 		val inputFor2x2GridWith2Results = "2 2 1 1 2 2"
 
@@ -28,7 +28,16 @@ class Args_parser_Test {
 		assertEquals(List(List(1, 1), List(2, 2)), grid.rows)
 	}
 
-	// 3. 3 x 3 grid with 10 results
+	@Test
+	def parses_5x5_grid_with_10_results {
 
-	// 4. 10 x 10 grid with 20 results
+		val inputFor5x5GridWith10Results = "10 5 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5"
+
+		val (numberOfResults, grid) = new SimpleArgsParser().parse(inputFor5x5GridWith10Results)
+
+		assertEquals(10, numberOfResults)
+
+		val gridForInput = List( List(1, 1, 1, 1, 1), List(2, 2, 2, 2, 2), List(3, 3, 3, 3, 3), List(4, 4, 4, 4, 4), List(5, 5, 5, 5, 5) )
+		assertEquals(gridForInput, grid.rows)
+	}
 }
