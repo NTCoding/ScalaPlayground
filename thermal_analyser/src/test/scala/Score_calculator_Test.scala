@@ -24,7 +24,12 @@ class Score_calculator_Test {
 		assertEquals(List((1, 1, 17)), scores)
 	}
 
-	// top 1 score from 5 x 5 grid
+	@Test
+	def calculates_top_3_scores_from_a_4x4_grid {
 
-	// top 3 scores from 4 x 4 grid
+		val grid = new Grid( List( List(2, 3, 2, 1), List(4, 4, 2, 0), List(3, 4, 1, 1), List(2, 3, 4, 4) ))
+		val scores = new SimpleScoreCalculator().calculate(3, grid)
+
+		val resultsForQuery = List( List(1, 2, 27), List(1, 1, 25), List(2, 2, 23) )
+	}
 }
