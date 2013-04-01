@@ -15,7 +15,14 @@ class Score_calculator_Test {
 		assertEquals(List((1, 1, 1)), scores)
 	}
 
-	// top 1 score from 2 x 2 grid
+	@Test
+	def calculates_top_1_score_from_2x2_grid {
+
+		val grid = new Grid(List( List(1, 1), List(2, 3) ))
+		val scores = new SimpleScoreCalculator().calculate(1, grid)
+
+		assertEquals(List(2, 2, 4), scores)
+	}
 
 	// top 1 score from 5 x 5 grid
 
