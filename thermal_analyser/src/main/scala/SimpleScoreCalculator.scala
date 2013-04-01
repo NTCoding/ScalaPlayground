@@ -3,9 +3,10 @@ package thermal_analyser
 class SimpleScoreCalculator extends ScoreCalculator {
 	
 	def calculate(number: Int, grid: Grid) = {
-		val scores = scoresFor(grid)
-		for (s <- scores) println(s)
-		scores.sortBy(_._3).reverse.take(number)
+		scoresFor(grid)
+				.sortBy(_._3)
+				.reverse
+				.take(number)
 	}
 
 	def scoresFor(grid: Grid) = {

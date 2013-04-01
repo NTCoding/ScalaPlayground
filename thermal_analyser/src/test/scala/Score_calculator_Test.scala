@@ -17,7 +17,7 @@ class Score_calculator_Test {
 
 	@Test
 	def calculates_top_1_score_from_3x3_grid {
-		println("3 x 3 test")
+		
 		val grid = new Grid(List( List(1, 2, 1), List(2, 1, 5), List(2, 1, 2) ))
 		val scores = new SimpleScoreCalculator().calculate(1, grid)
 
