@@ -1,0 +1,7 @@
+To test the application:
+
+1. cd into this dir (thermal_analyser/)
+
+2. start sbt
+
+3. execute "run" command with args e.g. run "1 2 1 1 2 2"
