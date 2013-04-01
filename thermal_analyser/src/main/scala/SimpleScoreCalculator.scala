@@ -4,20 +4,13 @@ class SimpleScoreCalculator extends ScoreCalculator {
 	
 	def calculate(number: Int, grid: Grid) = {
 		scoresFor(grid)
+				.toList
 				.sortBy(_._3)
 				.reverse
 				.take(number)
 	}
 
-	def scoresFor(grid: Grid) = {
-		var scores = List[(Int, Int, Int)]()
-		for (row <- 0 to grid.maxX) {
-			for (col <- 0 to grid.maxY) {
-				scores = scores :+ (row , col, scoreFor(row, col, grid))
-			}
-		}
-		scores
-	}
+	def scoresFor(grid: Grid) = for(row <- 0 to grid.maxX; col <- 0 to grid.maxY) yield (row , col, scoreFor(row, col, grid))
 
 	def scoreFor(row: Int, col: Int, grid: Grid) = {
 		aboveLeft(row, col, grid) + aboveCentre(row, col, grid) + aboveRight(row, col, grid) + 
