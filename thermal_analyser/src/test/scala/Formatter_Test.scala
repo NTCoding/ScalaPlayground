@@ -10,8 +10,17 @@ class Formatter_Test {
 	def formats_1_result_as_x_y_score_score {
 
 		val result = List((4, 3, 18))
-		var formattedResult = new SimpleResultFormatter().format(result)
+		val formattedResult = new SimpleResultFormatter().format(result)
 
 		assertEquals("(4,3 score:18)", formattedResult)
+	}
+
+	@Test
+	def formats_3_results_as_sequence_of_x_y_score {
+
+		val result = List( (2, 2, 18), (3, 3, 5), (5, 3, 1) )
+		val formattedResult = new SimpleResultFormatter().format(result)
+
+		assertEquals("(2,2 score:18)(3,3 score:5)(5,3 score:1)", formattedResult)
 	}
 }
