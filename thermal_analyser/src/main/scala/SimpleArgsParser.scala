@@ -7,7 +7,8 @@ class SimpleArgsParser extends ArgsParser {
 		val numberOfResults = chars(0).toInt
 		val gridSize = chars(1).toInt
 		val gridValues = chars.splitAt(2)._2.map(_.toInt).toList
-		(numberOfResults, new Grid(split(gridSize, List[List[Int]](), gridValues)))
+		val rows = split(gridSize, List[List[Int]](), gridValues)
+		(numberOfResults, new Grid(rows))
 	}
 
 	def split(gridSize: Int, rows: List[List[Int]], remaining: List[Int]) : List[List[Int]] = {
