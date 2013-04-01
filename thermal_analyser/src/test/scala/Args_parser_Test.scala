@@ -6,7 +6,6 @@ import junit.framework.Assert._
 
 class Args_parser_Test {
 
-	// 1. 1 x 1 grid with 1 result
 	@Test
 	def parses_1x1_grid_with_1_result {
 
@@ -18,7 +17,16 @@ class Args_parser_Test {
 		assertEquals(List(List(1)), grid.rows)
 	}
 
-	// 2. 2 x 2 grid with 4 results
+	@Test
+	def parser_2x2_grid_with_2_results {
+
+		val inputFor2x2GridWith2Results = "2 2 1 1 2 2"
+
+		val (numberOfResults, grid) = new SimpleArgsParser().parse(inputFor2x2GridWith2Results)
+
+		assertEquals(2, numberOfResults)
+		assertEquals(List(List(1, 1), List(2, 2)), grid.rows)
+	}
 
 	// 3. 3 x 3 grid with 10 results
 
