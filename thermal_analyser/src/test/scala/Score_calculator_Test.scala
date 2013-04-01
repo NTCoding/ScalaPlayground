@@ -12,21 +12,19 @@ class Score_calculator_Test {
 		val grid = new Grid(List(List(5)))
 		val scores = new SimpleScoreCalculator().calculate(1, grid)
 
-		assertEquals(List((1, 1, 1)), scores)
+		assertEquals(List((0, 0, 5)), scores)
 	}
 
 	@Test
-	def calculates_top_1_score_from_2x2_grid {
-
-		val grid = new Grid(List( List(1, 1), List(2, 3) ))
+	def calculates_top_1_score_from_3x3_grid {
+		println("3 x 3 test")
+		val grid = new Grid(List( List(1, 2, 1), List(2, 1, 5), List(2, 1, 2) ))
 		val scores = new SimpleScoreCalculator().calculate(1, grid)
 
-		assertEquals(List(2, 2, 4), scores)
+		assertEquals(List((1, 1, 17)), scores)
 	}
 
 	// top 1 score from 5 x 5 grid
-
-	// top 2 scores from 2 x 2
 
 	// top 3 scores from 4 x 4 grid
 }
