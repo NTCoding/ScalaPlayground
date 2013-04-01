@@ -23,7 +23,7 @@ class Acceptance_Test {
 		val input = "3 4 2 3 2 1 4 4 2 0 3 4 1 1 2 3 4 4"
 		val coordsAndScores = new Analyser(new SimpleArgsParser(), new SimpleScoreCalculator(), new SimpleResultFormatter()).analyse(input)
 
-		val correctCoordsAndScoresForThisInput = "(1,2 score:27)(1,1 score:25)(2,2 score: 23)"
+		val correctCoordsAndScoresForThisInput = "(1,2 score:27)(1,1 score:25)(2,2 score:23)"
 
 		assertEquals(correctCoordsAndScoresForThisInput, coordsAndScores)
 	}
