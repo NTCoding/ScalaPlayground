@@ -1,5 +1,3 @@
 package thermal_analyser
 
-class Grid(val size: Int, values: List[Int]) {
-	
-}
+class Grid(val rows: List[List[Int]]) { }

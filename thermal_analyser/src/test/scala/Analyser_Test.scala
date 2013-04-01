@@ -9,7 +9,7 @@ import junit.framework.Assert._
 class Analysert_Test {
 
 	val numberOfResults = 4
-	val grid = new Grid(1, List(1, 2, 3))
+	val grid = new Grid(List(List(1, 2, 3)))
 	val formattedResult = "(99, 100 score:2)"
 	val calcResults = List((1, 1, 25), (1, 2, 26))
 	var result = "not important here"
@@ -32,7 +32,7 @@ class Analysert_Test {
 	}
 
 	@Test
-	def uses_arguement_parser_and_score_builder_to_retrieve_top_n_items {
+	def uses_arguement_parser_and_score_builder_to_retrieve_top_n_items_then_formatter_to_generate_output {
 
 		assertEquals(formattedResult, result)
 	}
