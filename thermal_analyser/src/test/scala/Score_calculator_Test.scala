@@ -30,6 +30,8 @@ class Score_calculator_Test {
 		val grid = new Grid( List( List(2, 3, 2, 1), List(4, 4, 2, 0), List(3, 4, 1, 1), List(2, 3, 4, 4) ))
 		val scores = new SimpleScoreCalculator().calculate(3, grid)
 
-		val resultsForQuery = List( List(1, 2, 27), List(1, 1, 25), List(2, 2, 23) )
+		val resultsForQuery = List( (1, 2, 27), (1, 1, 25), (2, 2, 23) )
+
+		assertEquals(resultsForQuery, scores)
 	}
 }

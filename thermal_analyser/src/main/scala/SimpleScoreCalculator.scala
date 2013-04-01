@@ -10,7 +10,7 @@ class SimpleScoreCalculator extends ScoreCalculator {
 				.take(number)
 	}
 
-	def scoresFor(grid: Grid) = for(row <- 0 to grid.maxX; col <- 0 to grid.maxY) yield (row , col, scoreFor(row, col, grid))
+	def scoresFor(grid: Grid) = for(row <- 0 to grid.maxX; col <- 0 to grid.maxY) yield (col, row, scoreFor(row, col, grid))
 
 	def scoreFor(row: Int, col: Int, grid: Grid) = {
 		aboveLeft(row, col, grid) + aboveCentre(row, col, grid) + aboveRight(row, col, grid) + 
