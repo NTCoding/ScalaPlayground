@@ -16,7 +16,7 @@ class Delivers_events_to_registered_consumers {
 								
 		val configuration = List ( List(eventName, consumers(0), consumers(1)) )
 		
-		ensureQueuesExistAndAreEmpty
+		ensure_queues_exist_and_are_empty
 				
 		val host = new scalaEsbHost(configuration)
 		
@@ -35,11 +35,9 @@ class Delivers_events_to_registered_consumers {
 			}, queue)
 		}
 	}
-	
+		
 	@After
-	def clear_consumer_queues { for((host, queue) <- consumers) queryQueue(channel => channel.queuePurge(queue), queue)	}
-	
-	def ensureQueuesExistAndAreEmpty { for((host, queue) <- consumers) queryQueue(_ => Unit, queue) }
+	def ensure_queues_exist_and_are_empty { for((host, queue) <- consumers) queryQueue(channel => channel.queuePurge(queue), queue) }
 	
 	def queryQueue(query: Channel => Unit, queue: String) {
 		val factory = new ConnectionFactory()
