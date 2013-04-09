@@ -1,0 +1,11 @@
+Akka esb
+--------
+
+Plan:
+	1. Simple host that listens for messages and sends them to the configured queue
+
+	2. Host is able to retry messages when the message cannot be added to the queue
+
+	3. Host will process messages from the queue in a transactional manner
+
+	4. Investigate further what features are to be added
