@@ -37,9 +37,7 @@ class Delivers_events_to_registered_consumers {
 	}
 	
 	@After
-	def clear_consumer_queues {
-		// TODO
-	}
+	def clear_consumer_queues { for((host, queue) <- consumers) queryQueue(channel => channel.queuePurge(queue), queue)	}
 	
 	def ensureQueuesExistAndAreEmpty { for((host, queue) <- consumers) queryQueue(_ => Unit, queue) }
 	
