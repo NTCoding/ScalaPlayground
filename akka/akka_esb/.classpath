@@ -4,6 +4,14 @@
   <classpathentry output="target/scala-2.10/test-classes" path="src/test/scala" kind="src"></classpathentry>
   <classpathentry output="target/scala-2.10/test-classes" path="src/test/java" kind="src"></classpathentry>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/com.rabbitmq/amqp-client/jars/amqp-client-3.0.4.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/com.typesafe.akka/akka-actor_2.10/bundles/akka-actor_2.10-2.1.2.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/com.typesafe/config/bundles/config-1.0.0.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/junit/junit/jars/junit-4.10.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/com.novocode/junit-interface/jars/junit-interface-0.8.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/org.scala-tools.testing/test-interface/jars/test-interface-0.5.jar" kind="lib"></classpathentry>
+  <classpathentry path="/home/nicktune/.ivy2/cache/org.mockito/mockito-all/jars/mockito-all-1.9.5.jar" kind="lib"></classpathentry>
   <classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"></classpathentry>
   <classpathentry path="bin" kind="output"></classpathentry>
 </classpath>
