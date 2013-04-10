@@ -10,6 +10,7 @@ class Delivers_events_to_registered_consumers {
 	val eventName = "Score_calculation_updated"
 	val consumers = List( ("localhost", "PayoutService"), ("localhost", "CalcualationService") )
 	val testMessage = (eventName, (50, 100))
+	var host: scalaEsbHost = _
 	
 	@Before
 	def when_an_event_is_published {
@@ -18,11 +19,13 @@ class Delivers_events_to_registered_consumers {
 		
 		ensure_queues_exist_and_are_empty
 				
-		val host = new scalaEsbHost(configuration)
+		host = new scalaEsbHost(configuration)
 		
 		host.start
 		
 		host.publish(testMessage)
+		
+		Thread.sleep(200)
 	}
 	
 	@Test
@@ -38,6 +41,9 @@ class Delivers_events_to_registered_consumers {
 		
 	@After
 	def ensure_queues_exist_and_are_empty { for((host, queue) <- consumers) queryQueue(channel => channel.queuePurge(queue), queue) }
+	
+	@After
+	def stop_host { host.stop }
 	
 	def queryQueue(query: Channel => Unit, queue: String) {
 		val factory = new ConnectionFactory()
