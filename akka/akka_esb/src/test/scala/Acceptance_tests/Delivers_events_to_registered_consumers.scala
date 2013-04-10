@@ -9,7 +9,7 @@ class Delivers_events_to_registered_consumers {
 	
 	val eventName = "Score_calculation_updated"
 	val consumers = List( ("localhost", "PayoutService"), ("localhost", "CalcualationService") )
-	val testMessage = (eventName, 50, 100)
+	val testMessage = (eventName, (50, 100))
 	
 	@Before
 	def when_an_event_is_published {
