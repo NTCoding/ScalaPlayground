@@ -7,7 +7,7 @@
     <file path="/SBT" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373786983" ignored="false" />
     <file path="/build.sbt" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366748502" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/misc.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366937600" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366383274316" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366383394977" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366801224" ignored="false" />
     <file path="/Server.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373183188" ignored="false" />
     <file path="/a.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366369194033" ignored="false" />
@@ -77,10 +77,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PartialFunctions.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PartialFunctions.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PartialFunctions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="47" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2630561">
+            <state line="21" column="69" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImplicitConversions.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.5589942">
               <folding />
             </state>
           </provider>
@@ -511,16 +520,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/PartialFunctions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.5589942">
+        <state line="21" column="69" selection-start="533" selection-end="533" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/PartialFunctions.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="47" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2630561">
+        <state line="17" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.5589942">
           <folding />
         </state>
       </provider>
