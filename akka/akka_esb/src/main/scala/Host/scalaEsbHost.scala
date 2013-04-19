@@ -71,6 +71,6 @@ class PublishWorker extends Actor {
 		println(f"publishing to $service: " + message.toString)
 		ch.basicPublish(service, service, null, message.toString.getBytes)
 		ch.close
-		c.close
+		c.close 
 	}
 }

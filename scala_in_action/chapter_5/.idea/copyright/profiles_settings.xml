@@ -1,0 +1,11 @@
+<component name="CopyrightManager">
+  <settings default="">
+    <module2copyright />
+    <LanguageOptions name="Groovy">
+      <option name="fileTypeOverride" value="1" />
+    </LanguageOptions>
+    <LanguageOptions name="Scala">
+      <option name="fileTypeOverride" value="1" />
+    </LanguageOptions>
+  </settings>
+</component>
