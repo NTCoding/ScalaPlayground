@@ -7,11 +7,13 @@
     <file path="/SBT" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373786983" ignored="false" />
     <file path="/build.sbt" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366748502" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/misc.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366937600" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373903553" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366383274316" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366366801224" ignored="false" />
     <file path="/Server.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373183188" ignored="false" />
     <file path="/a.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366369194033" ignored="false" />
     <file path="/ImplicitConversions.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366373893625" ignored="false" />
+    <file path="/AndThen.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366375902762" ignored="false" />
+    <file path="/PartialFunctions.scala" changelist="216983e0-0156-4027-a41e-3faca4cb84a2" time="1366383255724" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,10 +77,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImplicitConversions.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala">
+      <file leaf-file-name="PartialFunctions.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/PartialFunctions.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.5589942">
+            <state line="8" column="47" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2630561">
               <folding />
             </state>
           </provider>
@@ -104,6 +106,8 @@
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/Server.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/AndThen.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/PartialFunctions.scala" />
       </list>
     </option>
   </component>
@@ -209,7 +213,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.ImplicitConversions">
+  <component name="RunManager" selected="Application.PartialFunctions">
     <configuration default="false" name="Scala Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true">
       <module name="default-7eb029" />
       <setting name="vmparams4" value="-Djline.terminal=NONE" />
@@ -221,6 +225,22 @@
     </configuration>
     <configuration default="false" name="ImplicitConversions" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ImplicitConversions" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="default-7eb029" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PartialFunctions" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="PartialFunctions" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -330,14 +350,16 @@
       <patterns />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
       <item index="1" class="java.lang.String" itemvalue="Application.ImplicitConversions" />
+      <item index="2" class="java.lang.String" itemvalue="Application.PartialFunctions" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.ImplicitConversions" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.PartialFunctions" />
         <item index="1" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ImplicitConversions" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -391,7 +413,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6415328" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20988655" sideWeight="0.671199" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32880098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -492,6 +514,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/ImplicitConversions.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="42" selection-start="298" selection-end="298" vertical-scroll-proportion="0.5589942">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/PartialFunctions.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="47" selection-start="243" selection-end="243" vertical-scroll-proportion="0.2630561">
           <folding />
         </state>
       </provider>
