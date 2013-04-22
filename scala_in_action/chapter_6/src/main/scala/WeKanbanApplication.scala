@@ -11,9 +11,11 @@ import Slinky._
 final class WeKanbanApplication extends StreamStreamServletApplication {
 
   val application = new ServletApplication[Stream, Stream] {
+
       def application(implicit servlet: HttpServlet, servletRequest: HttpServletRequest, request: Request[Stream]) = {
         HttpServlet.resource(x => OK << x.toStream, NotFound.xhtml)
       }
+
   }
 
 }
