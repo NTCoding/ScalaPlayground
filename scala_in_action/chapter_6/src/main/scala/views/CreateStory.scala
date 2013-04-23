@@ -21,9 +21,25 @@ object CreateStory {
                                         (uniquely identifies a story)
                                     </span>
                                 </label>
+                                <input type="text" size="10" maxlength="10" minlength="3" name="storyNumber" id="storyNumber" />
+                            </div>
+                            <div class="section">
+                                <label for="title">
+                                    Title
+                                    <span class="sublte">
+                                        (describe the story)
+                                    </span>
+                                </label>
+                                <textarea rows="5" cols="30" name="title" id="title"></textarea>
+                            </div>
+                            <div class="section">
+                                <button typ="submit">Save</button>
                             </div>
                         </fieldset>
                     </form>
+                    <span class="linkLabel">
+                        <a href="/kanban/board">Go to Kanban board</a>
+                    </span>
                 </div>
             </body>
         </html>
