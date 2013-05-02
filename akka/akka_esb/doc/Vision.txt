@@ -1,0 +1,13 @@
+
+Akka-esb Vision
+---------------
+
+To create a service bus that facilitates the creation of highly-decoupled (temporal, platform & implementation) services
+
+
+Features
+--------
++ Primarily to run on linux
++ Highly fault-tolerant - as soon as business intent is captured, it should never be lost. e.g. at least once message delivery
++ Horizontally scalable 
++ Easily monitorable 
