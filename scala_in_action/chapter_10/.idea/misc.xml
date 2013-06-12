@@ -1,0 +1,6 @@
+<project version="4">
+  <component 
+  jdk-15="true" project-jdk-type="JavaSDK" assert-keyword="true" project-jdk-name="1.7" languageLevel="JDK_1_7" name="ProjectRootManager" version="2">
+    <output url="file://$PROJECT_DIR$/target/idea_output"></output>
+</component>
+</project>
