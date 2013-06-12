@@ -8,7 +8,7 @@
     <file path="/TailCallFibber.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371046671897" ignored="false" />
     <file path="/Partial1HardTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371050318217" ignored="false" />
     <file path="/CurryingTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371051103794" ignored="false" />
-    <file path="/FunctionCompositionTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371052136687" ignored="false" />
+    <file path="/FunctionCompositionTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371052241082" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <file leaf-file-name="FunctionCompositionTest.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/FunctionCompositionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="57" selection-start="385" selection-end="385" vertical-scroll-proportion="0.22735043">
+            <state line="20" column="19" selection-start="814" selection-end="814" vertical-scroll-proportion="0.6495727">
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -501,7 +501,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/FunctionCompositionTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="57" selection-start="385" selection-end="385" vertical-scroll-proportion="0.22735043">
+        <state line="20" column="19" selection-start="814" selection-end="814" vertical-scroll-proportion="0.6495727">
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
