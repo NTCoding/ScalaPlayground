@@ -8,6 +8,7 @@
     <file path="/TailCallFibber.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371046671897" ignored="false" />
     <file path="/Partial1HardTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371050318217" ignored="false" />
     <file path="/CurryingTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371051103794" ignored="false" />
+    <file path="/FunctionCompositionTest.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371052136687" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +66,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CurryingTest.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/CurryingTest.scala">
+      <file leaf-file-name="FunctionCompositionTest.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/FunctionCompositionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="42" selection-start="172" selection-end="172" vertical-scroll-proportion="0.16239317">
+            <state line="7" column="57" selection-start="385" selection-end="385" vertical-scroll-proportion="0.22735043">
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -89,6 +90,7 @@
         <option value="$PROJECT_DIR$/src/test/scala/TailCallFibber.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Partial1HardTest.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/CurryingTest.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/FunctionCompositionTest.scala" />
       </list>
     </option>
   </component>
@@ -490,7 +492,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/CurryingTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="42" selection-start="172" selection-end="172" vertical-scroll-proportion="0.16239317">
+        <state line="13" column="87" selection-start="663" selection-end="663" vertical-scroll-proportion="0.42222223">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/FunctionCompositionTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="57" selection-start="385" selection-end="385" vertical-scroll-proportion="0.22735043">
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
