@@ -12,6 +12,7 @@
     <file path="/VariadicFunctions.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371119425760" ignored="false" />
     <file path="/VarianceBadboys.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371121232788" ignored="false" />
     <file path="/PersistentDataStructures.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371138150962" ignored="false" />
+    <file path="/Folding.scala" changelist="0196d14b-2ba3-4ead-9130-d9344b6e1363" time="1371141753716" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +71,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PersistentDataStructures.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PersistentDataStructures.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/PersistentDataStructures.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="21" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.47756875">
+            <state line="49" column="39" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#19#61#0" expanded="true" />
               </folding>
@@ -81,11 +82,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VarianceBadboys.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/VarianceBadboys.scala">
+      <file leaf-file-name="CurryingTest.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_2/CurryingTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="63" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+            <state line="17" column="48" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Folding.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/Folding.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="69" selection-start="491" selection-end="491" vertical-scroll-proportion="0.35745296">
+              <folding>
+                <element signature="e#19#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,6 +120,7 @@
         <option value="$PROJECT_DIR$/src/test/scala/chapter_3/VariadicFunctions.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/chapter_3/VarianceBadboys.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/chapter_3/PersistentDataStructures.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/chapter_3/Folding.scala" />
       </list>
     </option>
   </component>
@@ -205,66 +218,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="chapter_3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VarianceBadboys.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chapter_3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PersistentDataStructures.scala" />
-              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -613,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_2/CurryingTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="87" selection-start="663" selection-end="663" vertical-scroll-proportion="0.42222223">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_2/FunctionCompositionTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="842" selection-end="842" vertical-scroll-proportion="0.5083612">
@@ -638,16 +584,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/VarianceBadboys.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="63" selection-start="376" selection-end="376" vertical-scroll-proportion="0.0">
+        <state line="14" column="39" selection-start="326" selection-end="326" vertical-scroll-proportion="0.38494936">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/PersistentDataStructures.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="21" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.47756875">
+        <state line="49" column="39" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#19#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_2/CurryingTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="48" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/chapter_3/Folding.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="69" selection-start="491" selection-end="491" vertical-scroll-proportion="0.35745296">
+          <folding>
+            <element signature="e#19#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
