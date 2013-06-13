@@ -1,3 +1,5 @@
+package chapter_2
+
 import org.scalatest.FreeSpec
 import org.scalatest.matchers.MustMatchers
 
