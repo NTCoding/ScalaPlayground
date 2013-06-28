@@ -1,0 +1,37 @@
+
+Akka ESB
+--------
+
+Project Goals
+-------------
+To build an enterprise service bus that facilitates the construction of large-scale distributed systems aligned with business needs.
+
+Some important factors are:
+	+ runs on linux primarily
+	+ balance between ease of use and understanding how it works
+	+ horizonatally scalable with cpu cores (or as close as possible)
+	+ able to process messages fast if needed
+
+Systems built with this need to be:
+	+ fault tolerant - if part of the system fails, other should be fine
+	+ resilient to loss of data once intention has been captured
+	+ performant - the bus should not slow down applications, and should help as much as possible to make the application faster
+	+ scalable
+	+ monitored - how is the system coping with usage/load?
+
+
+Major use-cases
+---------------
+1. Services can send commands that are handled by only 1 consumer
+2. Events can be published handled by multiple subscribers
+3. Sagas 
+
+Questions
+----------
+1. How do other service buses work?
+
+
+Plan
+----
+
+

@@ -1,0 +1,17 @@
+
+Sending a command
+-----------------
+1. intent to send a command received
+2. intent to send a command needs to be persisted asap to intention is not lost
+3. intent to send command is logged
+4. command is transmitted to host on recipient
+5. host in recipient persists command and sends an ack to sender
+6. sender removes
+
+
+
+Questions
+---------
+1. How will intent to send a command be received?
+2. How will intent to send a command be persisted?
+
