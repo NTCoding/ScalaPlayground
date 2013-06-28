@@ -1,6 +1,0 @@
-Spreadsheet Test - Notes
--------------------------
-
-1. Didn't see the need for a cell class - just an implementation that adds refactoring friction
-
-2. Test is too prescriptive and granular - should not be giving me precise details about class names and methods - should be giving me requirements and letting me do them as I see fit
