@@ -4,9 +4,9 @@
     <list default="true" id="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" name="Default" comment="" />
     <ignored path="spreadsheet.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372453508649" ignored="false" />
+    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372454059927" ignored="false" />
     <file path="/a.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372442350686" ignored="false" />
-    <file path="/Spreadsheet_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372453904734" ignored="false" />
+    <file path="/Spreadsheet_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372454006323" ignored="false" />
     <file path="/App.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372451957782" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,10 +68,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Spreadsheet_spec.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Spreadsheet_spec.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="45" selection-start="5015" selection-end="5015" vertical-scroll-proportion="0.7027972">
+            <state line="129" column="69" selection-start="5201" selection-end="5201" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spreadsheet.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Spreadsheet.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="58" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0">
+            <state line="26" column="59" selection-start="838" selection-end="838" vertical-scroll-proportion="0.7027972">
               <folding />
             </state>
           </provider>
@@ -100,8 +100,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/App.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Spreadsheet.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Spreadsheet.scala" />
       </list>
     </option>
   </component>
@@ -528,19 +528,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="58" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="45" selection-start="5015" selection-end="5015" vertical-scroll-proportion="0.7027972">
+        <state line="129" column="69" selection-start="5201" selection-end="5201" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="59" selection-start="838" selection-end="838" vertical-scroll-proportion="0.7027972">
+          <folding />
         </state>
       </provider>
     </entry>

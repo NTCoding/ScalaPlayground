@@ -35,6 +35,8 @@ class Spreadsheet {
     }
 
     def getRange(start: (String, Int), end: (String, Int)) = {
+        cellMustBeWithinGridRange(start._1, start._2)
+        cellMustBeWithinGridRange(end._1, end._2)
         val startCol = validColumns.indexOf(start._1)
         val endCol = validColumns.indexOf(end._1)
         val startRow = start._2

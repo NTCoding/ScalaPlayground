@@ -129,7 +129,8 @@ class Spreadsheet_spec extends FreeSpec with TableDrivenPropertyChecks with Must
     }
 
     "Out of bounds ranges cause an error" in {
-        fail()
+        val sp = new Spreadsheet
+        intercept[GridCellOutOfRange](sp.getRange(("A", 0), ("A", 1)))
     }
 
 }
