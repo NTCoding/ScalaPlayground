@@ -34,6 +34,14 @@ class Spreadsheet {
         "   " ++ headers ++ sys.props("line.separator") ++ (fullRows mkString sys.props("line.separator"))
     }
 
+    def getRange(start: (String, Int), end: (String, Int)) = {
+        val startCol = validColumns.indexOf(start._1)
+        val endCol = validColumns.indexOf(end._1)
+        val startRow = start._2
+        val endRow = end._2
+        for (c <- startCol to endCol; r <- startRow to endRow) yield(validColumns(c), r, getCellValue(validColumns(c), r))
+    }
+
     private def cellMustBeWithinGridRange(column: String, row: Int) {
         val isInRange = validColumns.contains(column) && row >= 1 && row <= 10
         if(!isInRange) throw new GridCellOutOfRange
