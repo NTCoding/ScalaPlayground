@@ -21,4 +21,4 @@ I don't want to make this simple spreadsheet application seem more complicated t
 
 This is just a small application, with no real context, so all of these decisions are very trivial and inconsequential.
 
-7. All the object-oriented features needed in this application, in just my opinion of course, are really for the functions which are polymorphic
+7. All the object-oriented features needed in this application, in just my opinion of course, are really for the formulae which are polymorphic

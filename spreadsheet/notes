@@ -22,3 +22,5 @@ I don't want to make this simple spreadsheet application seem more complicated t
 This is just a small application, with no real context, so all of these decisions are very trivial and inconsequential.
 
 7. All the object-oriented features needed in this application, in just my opinion of course, are really for the formulae which are polymorphic
+
+8. At the end of the exercise, the spreadsheet class is as big as I would want it to get. Any more logic and it probably is time to split it up - but contextual information is needed
