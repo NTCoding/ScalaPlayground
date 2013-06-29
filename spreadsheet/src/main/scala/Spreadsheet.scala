@@ -13,6 +13,14 @@ class Spreadsheet {
         }
     }
 
+    def getCellDisplayValue(column: String, row: Int): String = {
+        data get(column, row) match {
+            case Some(NumericValue(value)) => value.toString
+            case Some(CountFormula(start, end)) => countRange(start, end).toString
+            case None => ""
+        }
+    }
+
     def setCellValue(column: String, row: Int, value: CellValue) {
         cellMustBeWithinGridRange(column, row)
         data += (column, row) -> value
@@ -29,7 +37,7 @@ class Spreadsheet {
      */
     def display = {
         val headers = validColumns map(_ + "      ") mkString ""
-        val cellValues = for(r <- 1 to 10; c <- validColumns) yield getCellValue(c, r) padTo(7, " ") mkString("")
+        val cellValues = for(r <- 1 to 10; c <- validColumns) yield getCellDisplayValue(c, r) padTo(7, " ") mkString("")
         val rowValues = cellValues grouped(8) map(_.mkString("")) toIndexedSeq
         val fullRows = for(i <- 0 to rowValues.length - 1) yield s"${i + 1}  ${rowValues(i)}"
         "   " ++ headers ++ sys.props("line.separator") ++ (fullRows mkString sys.props("line.separator"))
@@ -49,13 +57,15 @@ class Spreadsheet {
         could put the maths functions in a new class - but that means 2 classes and a 3rd class to coordinate
         between them - unnecessary complexity imo
      */
-    def sumRange(start: (String, Int), end: (String, Int)) = getRange(start, end).map(_._3.toDouble).sum
+    def sumRange(start: (String, Int), end: (String, Int)) = getNonEmptyValuesInRange(start, end).sum
 
-    def countRange(start: (String, Int), end: (String, Int)) = getRange(start, end).filter(_._3 != "").length
+    def countRange(start: (String, Int), end: (String, Int)) = getNonEmptyValuesInRange(start, end).length
 
-    def maxInRange(start: (String, Int), end: (String, Int)) = getRange(start, end).map(_._3.toDouble).max
+    def maxInRange(start: (String, Int), end: (String, Int)) = getNonEmptyValuesInRange(start, end).max
 
-    def minInRange(start: (String, Int), end: (String, Int)) = getRange(start, end).map(_._3.toDouble).min
+    def minInRange(start: (String, Int), end: (String, Int)) = getNonEmptyValuesInRange(start, end).min
+
+    private def getNonEmptyValuesInRange(start: (String, Int), end: (String, Int)) = getRange(start, end) filter(_._3 != "") map(_._3.toDouble)
 
     private def cellMustBeWithinGridRange(column: String, row: Int) {
         val isInRange = validColumns.contains(column) && row >= 1 && row <= 10

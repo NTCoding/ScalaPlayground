@@ -29,7 +29,7 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
 
             "But when printing the spreadsheet, the evaluation of the formula is shown" in {
                 // this could be more robust, but comparing full output needs a bit more experimenting with
-                sp.display must include("10                                                   3.0")
+                sp.display must include("10                                                   12")
             }
 
         }

@@ -20,3 +20,5 @@ I don't want to make this simple spreadsheet application seem more complicated t
 6. I chose to put the mathematical functions, sum etc, in a separate class. I was borderline because the spreadsheet class was still very thin on logic. By keeping all the logic together, I would also have had the benefit of being able to look for abstractions later, which might lead me to better abstractions. 
 
 This is just a small application, with no real context, so all of these decisions are very trivial and inconsequential.
+
+7. All the object-oriented features needed in this application, in just my opinion of course, are really for the formulae which are polymorphic

@@ -4,7 +4,7 @@
     <list default="true" id="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" name="Default" comment="" />
     <ignored path="spreadsheet.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372494817988" ignored="false" />
+    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372495740869" ignored="false" />
     <file path="/a.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372442350686" ignored="false" />
     <file path="/Spreadsheet_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372492541614" ignored="false" />
     <file path="/App.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372451957782" ignored="false" />
@@ -75,25 +75,25 @@
       <file leaf-file-name="Spreadsheet.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="59" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
+            <state line="32" column="60" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountFormula.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CountFormula.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/CountFormula.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="79" selection-start="379" selection-end="379" vertical-scroll-proportion="0.50524473">
+            <state line="12" column="52" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Spreadsheet_formulas_spec.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Spreadsheet_formulas_spec.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="57" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
+            <state line="31" column="96" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.92132866">
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -116,9 +116,9 @@
         <option value="$PROJECT_DIR$/src/test/scala/RangeCalculator.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_maths_functions_spec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/CountFormula.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Spreadsheet.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/CountFormula.scala" />
       </list>
     </option>
   </component>
@@ -468,7 +468,7 @@
       <window_info id="SBT Execute" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1796875" sideWeight="0.60465115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11145833" sideWeight="0.60465115" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39534885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -590,26 +590,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/CountFormula.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="52" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="59" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
+        <state line="32" column="60" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="57" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
+        <state line="31" column="96" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.92132866">
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/CountFormula.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="79" selection-start="379" selection-end="379" vertical-scroll-proportion="0.50524473">
-          <folding />
         </state>
       </provider>
     </entry>
