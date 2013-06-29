@@ -24,7 +24,7 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
             sp.setCellValue("H", 10, CountFormula(("A", 1), ("E", 3)))
 
            "The formula is returned as the value for that cell" in {
-                sp.getCellValue("H", 10) must equal(CountFormula(("A", 1), ("E", 3)))
+                sp.getCellValue("H", 10) must equal("=COUNT(A1:E3)")
             }
 
             "But when printing the spreadsheet, the evaluation of the formula is shown" in {

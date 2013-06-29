@@ -8,6 +8,7 @@ class Spreadsheet {
     def getCellValue(column: String, row: Int): String = {
         data get(column, row) match {
             case Some(NumericValue(value)) => value.toString
+            case Some(formula: Formula) => formula.toString
             case None => ""
         }
     }
