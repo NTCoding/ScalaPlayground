@@ -10,6 +10,10 @@ case class SumFormula(start: (String, Int), end: (String, Int)) extends Formula 
     def name = "SUM"
 }
 
+case class MinFormula(start: (String, Int), end: (String, Int)) extends Formula {
+
+    def name = "MIN"
+}
 
 sealed trait Formula extends CellValue {
 

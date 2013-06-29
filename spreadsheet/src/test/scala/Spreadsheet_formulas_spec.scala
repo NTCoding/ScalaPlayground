@@ -20,6 +20,7 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
         sp.setCellValue("E", 2, 99.90)
         sp.setCellValue("E", 3, 99.90)
 
+
         "After Putting a count formula in a cell" - {
             sp.setCellValue("H", 10, CountFormula(("A", 1), ("E", 3)))
 
@@ -34,6 +35,7 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
 
         }
 
+
         "After putting a sum formula in a cell" - {
             sp.setCellValue("H", 9, SumFormula(("A",2), ("B", 2)))
 
@@ -46,6 +48,21 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
             }
         }
 
+
+        "After putting a min formula in a cell" - {
+            sp.setCellValue("H", 8, MinFormula(("B", 1), ("C", 3)))
+
+            "The formula is returned as the value for that cell" in {
+                sp.getCellValue("H", 8) must equal("=MIN(B1:C3)")
+            }
+
+            "But when printing the spreadsheet, the evaluation of the formula is shown" in {
+                sp.display must include("8                                                   1.1")
+            }
+        }
+
+
+        // TODO - Add some tests to check ranges of formulas
     }
 
     // sum formula
