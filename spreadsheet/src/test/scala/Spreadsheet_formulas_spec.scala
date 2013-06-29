@@ -62,12 +62,18 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
         }
 
 
-        // TODO - Add some tests to check ranges of formulas
+        "After putting a max formula in a cell" - {
+            sp.setCellValue("H", 7, MaxFormula(("B", 1), ("C", 3)))
+
+            "The formula is returned as the value for that cell" in {
+                sp.getCellValue("H", 7) must equal("=MAX(B1:C3)")
+            }
+
+            "But when printing the spreadsheet, the evaluation of the formula is shown" in {
+                sp.display must include("7                                                   29.0")
+            }
+        }
+
+        // TODO - Add some tests to check ranges inside formulas - simply reuse current validation logic
     }
-
-    // sum formula
-
-    // min formula
-
-    // max formula
 }

@@ -19,6 +19,7 @@ class Spreadsheet {
             case Some(CountFormula(start, end)) => countRange(start, end).toString
             case Some(SumFormula(start, end)) => sumRange(start, end).toString
             case Some(MinFormula(start, end)) => minInRange(start, end).toString
+            case Some(MaxFormula(start, end)) => maxInRange(start, end).toString
             case None => ""
         }
     }

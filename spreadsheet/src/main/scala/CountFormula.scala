@@ -15,6 +15,11 @@ case class MinFormula(start: (String, Int), end: (String, Int)) extends Formula 
     def name = "MIN"
 }
 
+case class MaxFormula(start: (String, Int), end: (String, Int)) extends Formula {
+
+    def name = "MAX"
+}
+
 sealed trait Formula extends CellValue {
 
     def name: String
@@ -28,7 +33,6 @@ sealed trait Formula extends CellValue {
 case class NumericValue(value: Double) extends CellValue
 
 sealed trait CellValue
-
 
 object ImplicitFormulaConversions {
 
