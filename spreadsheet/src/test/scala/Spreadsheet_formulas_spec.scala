@@ -34,9 +34,18 @@ class Spreadsheet_formulas_spec extends FreeSpec with MustMatchers {
 
         }
 
-        "Putting a count formula in a cell with an invalid grid range causes an error" in {
-            fail
+        "After putting a sum formula in a cell" - {
+            sp.setCellValue("H", 9, SumFormula(("A",2), ("B", 2)))
+
+            "The formula is returned as the value for that cell" in {
+                sp.getCellValue("H", 9) must equal("=SUM(A2:B2)")
+            }
+
+            "But when printing the spreadsheet, the evaluation of the formula is shown" in {
+                sp.display must include("9                                                   16.55")
+            }
         }
+
     }
 
     // sum formula

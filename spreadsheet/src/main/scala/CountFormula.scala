@@ -1,12 +1,14 @@
 
-case class CountFormula(start: (String, Int), end: (String, Int)) extends Formula{
+case class CountFormula(start: (String, Int), end: (String, Int)) extends Formula {
 
     def name: String = "COUNT"
 
 }
 
+case class SumFormula(start: (String, Int), end: (String, Int)) extends Formula {
 
-case class NumericValue(value: Double) extends CellValue
+    def name = "SUM"
+}
 
 
 sealed trait Formula extends CellValue {
@@ -19,6 +21,7 @@ sealed trait Formula extends CellValue {
 
 }
 
+case class NumericValue(value: Double) extends CellValue
 
 sealed trait CellValue
 

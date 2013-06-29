@@ -17,6 +17,7 @@ class Spreadsheet {
         data get(column, row) match {
             case Some(NumericValue(value)) => value.toString
             case Some(CountFormula(start, end)) => countRange(start, end).toString
+            case Some(SumFormula(start, end)) => sumRange(start, end).toString
             case None => ""
         }
     }
