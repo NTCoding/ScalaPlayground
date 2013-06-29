@@ -3,16 +3,16 @@ import scala.collection.immutable.{IndexedSeq, HashMap}
 class Spreadsheet {
 
     private val validColumns = Array("A", "B", "C", "D", "E", "F", "G", "H")
-    private var data = HashMap[(String,Int), Double]()
+    private var data = HashMap[(String,Int), CellValue]()
 
     def getCellValue(column: String, row: Int): String = {
         data get(column, row) match {
-            case Some(value) => value.toString
+            case Some(NumericValue(value)) => value.toString
             case None => ""
         }
     }
 
-    def setCellValue(column: String, row: Int, value: Double) {
+    def setCellValue(column: String, row: Int, value: CellValue) {
         cellMustBeWithinGridRange(column, row)
         data += (column, row) -> value
     }

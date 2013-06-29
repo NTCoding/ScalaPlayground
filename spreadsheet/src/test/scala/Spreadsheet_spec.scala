@@ -1,5 +1,6 @@
 import org.scalatest.{FreeSpecLike, FreeSpec, MustMatchers}
 import org.scalatest.prop.TableDrivenPropertyChecks
+import ImplicitFormulaConversions._
 
 class Spreadsheet_spec extends FreeSpec with TableDrivenPropertyChecks with MustMatchers {
 

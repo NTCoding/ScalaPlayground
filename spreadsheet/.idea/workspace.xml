@@ -4,12 +4,14 @@
     <list default="true" id="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" name="Default" comment="" />
     <ignored path="spreadsheet.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372492643647" ignored="false" />
+    <file path="/Spreadsheet.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372494513988" ignored="false" />
     <file path="/a.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372442350686" ignored="false" />
     <file path="/Spreadsheet_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372492541614" ignored="false" />
     <file path="/App.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372451957782" ignored="false" />
     <file path="/RangeCalculator.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372454491539" ignored="false" />
     <file path="/Spreadsheet_maths_functions_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372492801982" ignored="false" />
+    <file path="/Spreadsheet_formulas_spec.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372494361736" ignored="false" />
+    <file path="/CountFormula.scala" changelist="2ae0ff7e-8abb-4a1c-b70a-1ce346bd1cbc" time="1372494317269" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,28 +72,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Spreadsheet_spec.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="0" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spreadsheet_maths_functions_spec.scala" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_maths_functions_spec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="21" selection-start="51" selection-end="51" vertical-scroll-proportion="0.017653167">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spreadsheet.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Spreadsheet.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="6" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+            <state line="9" column="21" selection-start="332" selection-end="332" vertical-scroll-proportion="0.26748252">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Spreadsheet_formulas_spec.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="36" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountFormula.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/CountFormula.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="65" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,9 +114,11 @@
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/App.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/RangeCalculator.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Spreadsheet.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/CountFormula.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/Spreadsheet_maths_functions_spec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Spreadsheet.scala" />
       </list>
     </option>
   </component>
@@ -216,6 +222,28 @@
               <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spreadsheet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spreadsheet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -239,7 +267,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="ScalaTest.Spreadsheet_spec">
+  <component name="RunManager" selected="ScalaTest.Spreadsheet">
     <configuration default="false" name="Spreadsheet" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <module name="Spreadsheet" />
       <setting name="path" value="Spreadsheet" />
@@ -394,9 +422,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.Spreadsheet_spec" />
-        <item index="1" class="java.lang.String" itemvalue="Application.App" />
-        <item index="2" class="java.lang.String" itemvalue="ScalaTest.Spreadsheet" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.Spreadsheet" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.Spreadsheet_spec" />
+        <item index="2" class="java.lang.String" itemvalue="Application.App" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -443,14 +471,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962587" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44994944" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Execute" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12447917" sideWeight="0.60465115" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39534885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1796875" sideWeight="0.60465115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39534885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -526,7 +554,9 @@
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +570,9 @@
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -549,23 +581,43 @@
         <state line="393" column="0" selection-start="16879" selection-end="16879" vertical-scroll-proportion="0.33281004" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="2" column="35" selection-start="147" selection-end="147" vertical-scroll-proportion="0.035306334">
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_maths_functions_spec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="51" selection-end="51" vertical-scroll-proportion="0.017653167">
+        <state line="2" column="35" selection-start="99" selection-end="99" vertical-scroll-proportion="0.035306334">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/Spreadsheet_formulas_spec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="36" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/CountFormula.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="65" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Spreadsheet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="21" selection-start="332" selection-end="332" vertical-scroll-proportion="0.26748252">
           <folding />
         </state>
       </provider>

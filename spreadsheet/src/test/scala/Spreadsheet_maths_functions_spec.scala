@@ -1,5 +1,6 @@
 import org.scalatest.FreeSpec
 import org.scalatest.MustMatchers
+import ImplicitFormulaConversions._
 
 class Spreadsheet_maths_functions_spec extends FreeSpec with MustMatchers{
 
