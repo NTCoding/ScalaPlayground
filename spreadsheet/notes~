@@ -9,7 +9,7 @@ Spreadsheet Test - Notes
 
 4. Personally, I do not think ranges needed to be modelled in an object-oriented way. The code is very simple, and I don't think the extra abstractions that could be added - cell, range etc add any value at all.
 
-When choosing abstractions, the most important concern is managing complexity - how easy will it be for other to people to understand. Too monolithic and important concepts will be hidden away. But equally, an explosion of classes can also make code bases very hard to read. I blogged about this here: http://ntcoding.blogspot.co.uk/2012/09/method-per-class-is-bit-smelly.html
+When choosing abstractions, the most important concern is managing complexity - how easy will it be for other to people to understand. Too monolithic and important concepts will be hidden away. But equally, an explosion of classes can also make code bases very hard to read. I blogged about this here: http://ntcoding.blogspot.co.uk/2012/09/method-per-class-is-bit-smelly.html I've worked on code bases like these, and a lot of time is wasted piecing together bits of logic.
 
 My philosophy is to wait - wait until the code is complicated enough that an abstraction will make it clearer. In this case, I've modelled ranges as tuples, and the method name "getRange" clarifies my intent perfectly.
 

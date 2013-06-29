@@ -14,3 +14,9 @@ When choosing abstractions, the most important concern is managing complexity - 
 My philosophy is to wait - wait until the code is complicated enough that an abstraction will make it clearer. In this case, I've modelled ranges as tuples, and the method name "getRange" clarifies my intent perfectly.
 
 I don't want to make this simple spreadsheet application seem more complicated than it is by adding lots of classes. For me if you can keep all your code in one place, and still understand it easily, then that's the perfect level of granularity. Looking at the spreadsheet class there is very little in it (thanks to Scala :) ).
+
+5. If this application was larger, I would certainly think about abstractions to represent ranges etc. Relying on tuples is great, until the structure changes, then you have to update about 20 method signatures, test etc.
+
+6. I chose to put the mathematical functions, sum etc, in a separate class. I was borderline because the spreadsheet class was still very thin on logic. By keeping all the logic together, I would also have had the benefit of being able to look for abstractions later, which might lead me to better abstractions. 
+
+This is just a small application, with no real context, so all of these decisions are very trivial and inconsequential.
