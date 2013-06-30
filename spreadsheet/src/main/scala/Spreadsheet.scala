@@ -13,6 +13,9 @@ class Spreadsheet {
         }
     }
 
+    /*
+        Could use strategy pattern - un-needed complexity at this point
+     */
     def getCellDisplayValue(column: String, row: Int): String = {
         data get(column, row) match {
             case Some(NumericValue(value)) => value.toString
