@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="je-3.3.69.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/je-3.3.69.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

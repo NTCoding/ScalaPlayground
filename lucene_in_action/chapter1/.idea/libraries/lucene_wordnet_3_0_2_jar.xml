@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lucene-wordnet-3.0.2.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lucene-wordnet-3.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/lucene-wordnet-3.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
