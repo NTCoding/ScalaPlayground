@@ -1,4 +1,4 @@
-import org.apache.lucene.analysis.WhitespaceAnalyzer
+import org.apache.lucene.analysis._
 import org.apache.lucene.document.{Field, Document}
 import org.apache.lucene.index.{Term, IndexReader, IndexWriter}
 import org.apache.lucene.search.{TermQuery, IndexSearcher}
@@ -65,6 +65,8 @@ class Indexing_tests extends FreeSpec with MustMatchers with BeforeAndAfterEach 
     }
 
     "Document fields show new value when updated, and not old value" in {
+        getHitCount("city", "Amsterdam") must equal(1)
+
         val update = new Document
         update add new Field("id", "1", Field.Store.YES, Field.Index.NOT_ANALYZED)
         update add new Field("country", "Netherlands", Field.Store.YES, Field.Index.NO)
@@ -75,7 +77,7 @@ class Indexing_tests extends FreeSpec with MustMatchers with BeforeAndAfterEach 
         wr close
 
         getHitCount("city", "Amsterdam") must equal(0)
-        getHitCount("city", "Den Haag") must equal(1)
+        getHitCount("city", "Den") must equal(1)
     }
 
     def getHitCount(field: String, q: String): Int = {
