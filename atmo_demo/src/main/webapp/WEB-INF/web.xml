@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://java.sun.com/xml/ns/j2ee/web-app_2.5.xsd">
 
-    <description>Atmosphere com.artirix.fed.Chat</description>
-    <display-name>Atmosphere com.artirix.fed.Chat</display-name>
+    <description>Atmosphere Scala SBT Demo</description>
+    <display-name>Atmosphere Scala SBT Demo</display-name>
     <servlet>
         <description>AtmosphereServlet</description>
         <servlet-name>AtmosphereServlet</servlet-name>
