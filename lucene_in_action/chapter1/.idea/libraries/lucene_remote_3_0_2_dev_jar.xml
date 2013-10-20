@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="lucene-remote-3.0.2-dev.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/lucene-remote-3.0.2-dev.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
