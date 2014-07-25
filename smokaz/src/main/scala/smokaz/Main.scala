@@ -25,7 +25,7 @@ object Main extends App {
 
     Thread.sleep(2000)
 
-    dealer ! "StartDealing"
+    dealer ! "BatchOfSmokingItems" // one day I'll make this a case object
   }
 
 }
@@ -34,7 +34,7 @@ trait TimeoutGenerator {
   def generate(): FiniteDuration
 }
 
-class RandomTimeoutGenerator {
+class RandomTimeoutGenerator extends TimeoutGenerator {
   import scala.concurrent.duration._
   private val r = new Random
   def generate = r.nextInt(10) seconds
