@@ -20,6 +20,8 @@ It's not intended to be production quality - lots of magics strings and untested
 ## Running the application
 Just fire up sbt and "run" the thing. It will continue forever so you have to kill it yourself (pull requests welcome)
 
+You can also sbt "test" but the sleeps might not operate successfully on your machine (akka timefactor can be used - pull requests welcome)
+
 ## Sample output
 ```
 INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started

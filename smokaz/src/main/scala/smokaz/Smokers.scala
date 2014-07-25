@@ -1,3 +1,5 @@
+package smokaz
+
 import akka.actor.{ActorLogging, Actor}
 
 import scala.util.Random
