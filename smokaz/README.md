@@ -22,26 +22,26 @@ Just fire up sbt and "run" the thing. It will continue forever so you have to ki
 
 ## Sample output
 ```
-[Smokaz-akka.actor.default-dispatcher-2] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-[Smokaz-akka.actor.default-dispatcher-6] INFO NeedPaperSmoker - I neeeeed some paper. Feed my lungs with tar
-[Smokaz-akka.actor.default-dispatcher-6] INFO NeedACigSmoker - I neeeeed a cigarette. Feed my lungs with tar
-[Smokaz-akka.actor.default-dispatcher-6] INFO NeedAMatchSmoker - I neeeeed a match. Feed my lungs with tar
-[Smokaz-akka.actor.default-dispatcher-3] INFO Dealer - Placed Paper on table
-[Smokaz-akka.actor.default-dispatcher-3] INFO NeedPaperSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-6] INFO Dealer - Placed Cigarette on table
-[Smokaz-akka.actor.default-dispatcher-6] INFO NeedACigSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-3] INFO Dealer - Placed Match on table
-[Smokaz-akka.actor.default-dispatcher-3] INFO NeedAMatchSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedACigSmoker - Finished smoking. Feed me more tar
-[Smokaz-akka.actor.default-dispatcher-5] INFO Dealer - Placed Cigarette on table
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedACigSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-4] INFO NeedACigSmoker - Finished smoking. Feed me more tar
-[Smokaz-akka.actor.default-dispatcher-4] INFO Dealer - Placed Cigarette on table
-[Smokaz-akka.actor.default-dispatcher-4] INFO NeedACigSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedPaperSmoker - Finished smoking. Feed me more tar
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedAMatchSmoker - Finished smoking. Feed me more tar
-[Smokaz-akka.actor.default-dispatcher-5] INFO Dealer - Placed Paper on table
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedPaperSmoker - I am now smoking leave me alone
-[Smokaz-akka.actor.default-dispatcher-5] INFO Dealer - Placed Match on table
-[Smokaz-akka.actor.default-dispatcher-5] INFO NeedAMatchSmoker - I am now smoking leave me alone
+INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+INFO NeedPaperSmoker - I neeeeed some paper. Feed my lungs with tar
+INFO NeedACigSmoker - I neeeeed a cigarette. Feed my lungs with tar
+INFO NeedAMatchSmoker - I neeeeed a match. Feed my lungs with tar
+INFO Dealer - Placed Paper on table
+INFO NeedPaperSmoker - I am now smoking leave me alone
+INFO Dealer - Placed Cigarette on table
+INFO NeedACigSmoker - I am now smoking leave me alone
+INFO Dealer - Placed Match on table
+INFO NeedAMatchSmoker - I am now smoking leave me alone
+INFO NeedACigSmoker - Finished smoking. Feed me more tar
+INFO Dealer - Placed Cigarette on table
+INFO NeedACigSmoker - I am now smoking leave me alone
+INFO NeedACigSmoker - Finished smoking. Feed me more tar
+INFO Dealer - Placed Cigarette on table
+INFO NeedACigSmoker - I am now smoking leave me alone
+INFO NeedPaperSmoker - Finished smoking. Feed me more tar
+INFO NeedAMatchSmoker - Finished smoking. Feed me more tar
+INFO Dealer - Placed Paper on table
+INFO NeedPaperSmoker - I am now smoking leave me alone
+INFO Dealer - Placed Match on table
+INFO NeedAMatchSmoker - I am now smoking leave me alone
 ```
