@@ -6,95 +6,47 @@ import scala.util.Random
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-class NeedACigSmoker extends Actor with ActorLogging {
-  private val r = new Random()
+class Smoker(private var items: Set[SmokingItem]) extends Actor with ActorLogging {
+
+  def allSmokingItems = Seq(new Cigarette, new Match, new Paper) // TODO - don't like this, it will do for now (use enum instead)
 
   def receive = {
-    case "StartSmoking" =>
-      log.info(s"I neeeeed a cigarette. Feed my lungs with tar")
-      context.system.eventStream.subscribe(self, classOf[PlacedCigaretteOnTable])
-      context.become(waiting)
+    case "DealerIsDealing" =>
+      log.info(s"I am eagerly watching the table mr dealer. Please feed my cravings; I need: ${iNeed.map(_.getClass.getSimpleName) mkString ", "}")
+      iNeed().foreach {
+        t =>
+          log.info(s"Subscribing to ${availabilityNotificationFor(t)}")
+          context.system.eventStream.subscribe(self, availabilityNotificationFor(t))
+      }
+      context.become(craving)
   }
 
-  def waiting: Receive = {
-    case p: PlacedCigaretteOnTable =>
-      log.info("I am now smoking leave me alone")
-      context.become(smoking)
-      context.system.eventStream.publish(new PickedUpCigarette)
-      context.system.scheduler.scheduleOnce(r.nextInt(10) seconds, self, "StopSmoking")
-  }
-
-  def smoking: Receive = {
-    case p: PlacedCigaretteOnTable =>
-      log.info("I am smoking you fool - do not put a cigarette on the table")
-
-    case "StopSmoking" =>
-      context.become(waiting)
-      log.info("Finished smoking. Feed me more tar")
-      context.system.eventStream.publish(new NeedCigarette)
-  }
-
-}
-
-class NeedAMatchSmoker extends Actor with ActorLogging {
-  private val r = new Random()
-
-  def receive = {
-    case "StartSmoking" =>
-      log.info(s"I neeeeed a match. Feed my lungs with tar")
-      context.system.eventStream.subscribe(self, classOf[PlacedMatchOnTable])
-      context.become(waiting)
-  }
-
-  def waiting: Receive = {
-    case p: PlacedMatchOnTable =>
-      log.info("I am now smoking leave me alone")
-      context.become(smoking)
-      context.system.eventStream.publish(new PickedUpMatch)
-      context.system.scheduler.scheduleOnce(r.nextInt(10) seconds, self, "StopSmoking")
-  }
-
-  def smoking: Receive = {
-    case p: PlacedMatchOnTable =>
-      log.info("I am smoking you fool - do not put a match on the table")
-
-
-    case "StopSmoking" =>
-      context.become(waiting)
-      log.info("Finished smoking. Feed me more tar")
-      context.system.eventStream.publish(new NeedMatch)
-  }
-
-}
-
-class NeedPaperSmoker extends Actor with ActorLogging {
-  private val r = new Random()
-
-  def receive = {
-    case "StartSmoking" =>
-      log.info(s"I neeeeed some paper. Feed my lungs with tar")
-      context.system.eventStream.subscribe(self, classOf[PlacedPaperOnTable])
-      context.become(waiting)
-  }
-
-  def waiting: Receive = {
+  def craving: Receive = {
     case p: PlacedPaperOnTable =>
-      log.info("I am now smoking leave me alone")
-      context.become(smoking)
-      context.system.eventStream.publish(new PickedUpPaper)
-      context.system.scheduler.scheduleOnce(r.nextInt(10) seconds, self, "StopSmoking")
+      log.info(s"Trying to grab the paper")
+      context.system.eventStream.publish(new GrabPaper(self))
+
+    case m: PlacedMatchOnTable =>
+      log.info(s"Trying to grab the match")
+      context.system.eventStream.publish(new GrabMatch(self))
+
+    case c: PlacedCigaretteOnTable =>
+      log.info(s"Trying to grab the cigarette")
+      context.system.eventStream.publish(new GrabCigarette(self))
   }
 
-  def smoking: Receive = {
-    case p: PlacedPaperOnTable =>
-      log.info("I am smoking you fool - do not put a match on the table")
+  private def iNeed() = allSmokingItems.diff(items.toSeq)
 
-    case "StopSmoking" =>
-      context.become(waiting)
-      log.info("Finished smoking. Feed me more tar")
-      context.system.eventStream.publish(new NeedPaper)
+  private def availabilityNotificationFor(item: SmokingItem) = item match {
+    case p: Paper =>
+      classOf[PlacedPaperOnTable]
+
+    case m: Match =>
+      classOf[PlacedMatchOnTable]
+
+    case c: Cigarette =>
+      classOf[PlacedCigaretteOnTable]
   }
-
 }
 
 

@@ -15,13 +15,13 @@ object Main extends App {
     system.log.debug("Starting up system")
 
     val dealer = system.actorOf(Props(classOf[Dealer], t, new RandomItemSelector), "dealer")
-    val needsCig = system.actorOf(Props(classOf[NeedACigSmoker]), "needACigSmoker")
-    val needsMatch = system.actorOf(Props(classOf[NeedAMatchSmoker]), "needAMatchSmoker")
-    val needsPaper = system.actorOf(Props(classOf[NeedPaperSmoker]), "needPaperSmoker")
+    val hasCigs = system.actorOf(Props(classOf[Smoker], Set(new Cigarette)), "hasCigsSmoker")
+    val hasMatches = system.actorOf(Props(classOf[Smoker], Set(new Match)), "hasMatchesSmoker")
+    val hasPaper = system.actorOf(Props(classOf[Smoker], Set(new Paper)), "hasPaperSmoker")
 
-    needsCig ! "StartSmoking"
-    needsMatch ! "StartSmoking"
-    needsPaper ! "StartSmoking"
+    hasCigs ! "DealerIsDealing"
+    hasMatches ! "DealerIsDealing"
+    hasPaper ! "DealerIsDealing"
 
     Thread.sleep(2000)
 
@@ -53,6 +53,6 @@ class RandomItemSelector extends SmokingItemSelector {
 }
 
 trait SmokingItem {}
-class Cigarette extends SmokingItem {}
-class Match extends SmokingItem {}
-class Paper extends SmokingItem {}
+case class Cigarette() extends SmokingItem {}
+case class Match() extends SmokingItem {}
+case class Paper() extends SmokingItem {}
