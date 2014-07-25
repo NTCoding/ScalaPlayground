@@ -11,7 +11,7 @@ Once the smoker has claimed the item from the table they will then smoke a cigar
 - The dealer can not put an item on the table that is for a smoker who is currently smoking a cigarette
 
 ## Implementation
-This implementation uses actors models the events in state-machine like, declarative-like way of expressing the rules of the game. Communication occurs using
+This implementation uses actors and events to form a state-machine like, declarative-like model expressing the rules of the game. Communication occurs using
 Akka's event bus. This allows all entities involved in the game to be completely decoupled from each other - and without any shared state. 
 Apparently that's good for concurrency and parallelism - and no threads or locks necessary].
 
