@@ -10,7 +10,7 @@ class Only_1_item_allowed_on_the_table extends DealerSpec("dealerSpecs4") {
    "If there is an item on the table" - {
      val selector = new HardCodedSmokingItemSelector(new Paper)
      val listener = SubscribeToEventStreamForDealerMessages(system)
-     val dealer = system.actorOf(Props(classOf[Dealer], new ZeroSecondTimeoutGenerator, selector))
+     val dealer = system.actorOf(Props(classOf[Dealer], selector))
      dealer ! "BatchOfSmokingItems"
 
      "When a smoker finishes smoking (or lies about picking up the wrong item)" - {

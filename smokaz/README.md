@@ -1,6 +1,6 @@
 # Smokaz
-At the table sits a dealer and 3 smokers. Each smoker requires a cigarette, a match, and some striking paper so they can shmoke. But they each 
-have only 2 of the ingredients (creating each possible combination - no 2 have the same items).
+At the table sits a dealer and n smokers. Each smoker requires a cigarette, a match, and some rolling paper so they can schmoke. But they each
+have an unlimited supply of only 1 of the ingredients.
 
 Fortunately the dealer will put 1 smoking item on the table, which will may then rightfully be claimed by only the smoker who needs that item.
 
@@ -20,7 +20,7 @@ It's not intended to be production quality - lots of magics strings and untested
 ## Running the application
 Just fire up sbt and "run" the thing. It will continue forever so you have to kill it yourself (pull requests welcome)
 
-You can also sbt "test" but the sleeps might not operate successfully on your machine (akka timefactor can be used - pull requests welcome)
+You can also sbt "test". You may need to adjust the time factor in /src/test/resource/application.conf if some tests fail
 
 ## Sample output
 ```

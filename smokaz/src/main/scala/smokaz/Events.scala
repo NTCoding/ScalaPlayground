@@ -18,3 +18,11 @@ class NeedPaper extends SmokerProtocol
 case class GrabCigarette(smoker: ActorRef) extends SmokerProtocol
 case class GrabPaper(smoker: ActorRef) extends SmokerProtocol
 case class GrabMatch(smoker: ActorRef) extends SmokerProtocol
+case class IAmSmoking(smoker: ActorRef) extends SmokerProtocol
+case class IAmCraving(smoker: ActorRef) extends SmokerProtocol
+
+abstract class TableProtocol
+class TableAvailable extends TableProtocol
+class CigaretteOnTable extends TableProtocol
+class MatchOnTable extends TableProtocol
+class PaperOnTable extends TableProtocol

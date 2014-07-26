@@ -9,7 +9,7 @@ class Puts_item_on_table_when_receives_a_batch extends DealerSpec("dealerSpecs2"
 
    "When the dealer receives a batch of smoking items" - {
      val selector = new HardCodedSmokingItemSelector(new Cigarette)
-     val dealer = system.actorOf(Props(classOf[Dealer], new ZeroSecondTimeoutGenerator, selector))
+     val dealer = system.actorOf(Props(classOf[Dealer], selector))
      val listener = SubscribeToEventStreamForDealerMessages(system)
      dealer ! "BatchOfSmokingItems"
 

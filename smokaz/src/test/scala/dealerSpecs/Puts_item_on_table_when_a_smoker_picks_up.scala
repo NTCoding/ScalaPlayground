@@ -9,9 +9,11 @@ class Puts_item_on_table_when_a_smoker_picks_up extends DealerSpec("dealerSpecs3
 
    "If the dealer has put an item on the table" - {
      val selector = new QueuedSmokingItemSelector(Seq(new Cigarette, new Match))
-     val dealer = system.actorOf(Props(classOf[Dealer], new ZeroSecondTimeoutGenerator, selector))
      val listener = SubscribeToEventStreamForDealerMessages(system)
+     val dealer = system.actorOf(Props(classOf[Dealer], selector))
+
      dealer ! "BatchOfSmokingItems"
+     Thread.sleep(100)
 
      "When a smoker picks up the item from the table" - {
        system.eventStream.publish(new PickedUpCigarette)

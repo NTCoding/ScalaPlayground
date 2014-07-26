@@ -13,7 +13,7 @@ class Only_puts_down_an_item_required_by_one_of_the_smokers extends DealerSpec("
      )
      val selector = new QueuedSmokingItemSelector(invalidSequenceOfItemPlacements)
      val listener = SubscribeToEventStreamForDealerMessages(system)
-     val dealer = system.actorOf(Props(classOf[Dealer], new ZeroSecondTimeoutGenerator, selector))
+     val dealer = system.actorOf(Props(classOf[Dealer], selector))
      dealer ! "BatchOfSmokingItems"
 
      listener.receiveOne(testTimeout).getClass must equal(classOf[PlacedCigaretteOnTable])

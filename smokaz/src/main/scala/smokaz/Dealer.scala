@@ -6,7 +6,7 @@ import akka.event.EventBus
 
 import scala.util.Random
 
-class Dealer(private val timeout: TimeoutGenerator, private val selector: SmokingItemSelector) extends Actor with ActorLogging {
+class Dealer(private val selector: SmokingItemSelector) extends Actor with ActorLogging {
   private var numberOfSmokersNeedingCigs = 2
   private var numberOfSmokersNeedingMatches = 2
   private var numberOfSmokersNeedingPaper = 2
@@ -15,6 +15,7 @@ class Dealer(private val timeout: TimeoutGenerator, private val selector: Smokin
   private def canPlaceMatch = numberOfSmokersNeedingMatches > 0
   private def canPlacePaper = numberOfSmokersNeedingPaper > 0
 
+  // TODO - could move this responsibility to table - and table indicates when item has been picked up
   private var itemOnTable: Option[AnyRef] = None
 
   def receive = {
@@ -34,18 +35,18 @@ class Dealer(private val timeout: TimeoutGenerator, private val selector: Smokin
   }
 
   def dealing: Receive = {
-    case p: PickedUpCigarette =>
-      itemOnTable.map(i => if (i.getClass == classOf[Cigarette]) itemOnTable = None)
+    case p: PickedUpCigarette if itemOnTable.exists(_.getClass == classOf[Cigarette]) =>
+      itemOnTable = None
       numberOfSmokersNeedingCigs = numberOfSmokersNeedingCigs - 1
       placeItemOnTable()
 
-    case p: PickedUpMatch =>
-      itemOnTable.map(i => if (i.getClass == classOf[Match]) itemOnTable = None)
+    case p: PickedUpMatch if itemOnTable.exists(_.getClass == classOf[Match]) =>
+      itemOnTable = None
       numberOfSmokersNeedingMatches = numberOfSmokersNeedingMatches - 1
       placeItemOnTable()
 
-    case p: PickedUpPaper =>
-      itemOnTable.map(i => if (i.getClass == classOf[Paper]) itemOnTable = None)
+    case p: PickedUpPaper if itemOnTable.exists(_.getClass == classOf[Paper]) =>
+      itemOnTable = None
       numberOfSmokersNeedingPaper = numberOfSmokersNeedingPaper - 1
       placeItemOnTable()
 
@@ -60,11 +61,13 @@ class Dealer(private val timeout: TimeoutGenerator, private val selector: Smokin
     case n: NeedPaper =>
       numberOfSmokersNeedingPaper = numberOfSmokersNeedingPaper + 1
       placeItemOnTable()
+
+    case any =>
+      log.error(s"Do not do this: $any")
   }
 
   private def placeItemOnTable() {
-    if (itemOnTable.isDefined) return
-
+    if (itemOnTable.isDefined || everyoneIsSmoking) return
     val item = selector.select()
     if (canPlace(item)) {
       log.info(s"Placed ${item.getClass.getSimpleName} on table")
@@ -75,6 +78,8 @@ class Dealer(private val timeout: TimeoutGenerator, private val selector: Smokin
       placeItemOnTable()
     }
   }
+
+  private def everyoneIsSmoking() = (!canPlaceCig) && (!canPlaceMatch) && !(canPlacePaper)
 
   private def canPlace(item: SmokingItem) = item match {
     case c: Cigarette =>

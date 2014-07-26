@@ -14,10 +14,13 @@ object Main extends App {
 
     system.log.debug("Starting up system")
 
-    val dealer = system.actorOf(Props(classOf[Dealer], t, new RandomItemSelector), "dealer")
-    val hasCigs = system.actorOf(Props(classOf[Smoker], Set(new Cigarette)), "hasCigsSmoker")
-    val hasMatches = system.actorOf(Props(classOf[Smoker], Set(new Match)), "hasMatchesSmoker")
-    val hasPaper = system.actorOf(Props(classOf[Smoker], Set(new Paper)), "hasPaperSmoker")
+    val dealer = system.actorOf(Props(classOf[Dealer], new RandomItemSelector), "dealer")
+    val hasCigs = system.actorOf(Props(classOf[Smoker], Set(new Cigarette), t), "hasCigsSmoker")
+    val hasMatches = system.actorOf(Props(classOf[Smoker], Set(new Match), t), "hasMatchesSmoker")
+    val hasPaper = system.actorOf(Props(classOf[Smoker], Set(new Paper), t), "hasPaperSmoker")
+    val table = system.actorOf(Props(classOf[Table]), "table")
+
+    table ! "Prepare"
 
     hasCigs ! "DealerIsDealing"
     hasMatches ! "DealerIsDealing"
@@ -25,7 +28,7 @@ object Main extends App {
 
     Thread.sleep(2000)
 
-    dealer ! "BatchOfSmokingItems" // one day I'll make this a case object
+    dealer ! "BatchOfSmokingItems"
   }
 
 }
