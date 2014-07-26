@@ -24,26 +24,22 @@ You can also sbt "test". You may need to adjust the time factor in /src/test/res
 
 ## Sample output
 ```
-INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-INFO NeedPaperSmoker - I neeeeed some paper. Feed my lungs with tar
-INFO NeedACigSmoker - I neeeeed a cigarette. Feed my lungs with tar
-INFO NeedAMatchSmoker - I neeeeed a match. Feed my lungs with tar
-INFO Dealer - Placed Paper on table
-INFO NeedPaperSmoker - I am now smoking leave me alone
-INFO Dealer - Placed Cigarette on table
-INFO NeedACigSmoker - I am now smoking leave me alone
-INFO Dealer - Placed Match on table
-INFO NeedAMatchSmoker - I am now smoking leave me alone
-INFO NeedACigSmoker - Finished smoking. Feed me more tar
-INFO Dealer - Placed Cigarette on table
-INFO NeedACigSmoker - I am now smoking leave me alone
-INFO NeedACigSmoker - Finished smoking. Feed me more tar
-INFO Dealer - Placed Cigarette on table
-INFO NeedACigSmoker - I am now smoking leave me alone
-INFO NeedPaperSmoker - Finished smoking. Feed me more tar
-INFO NeedAMatchSmoker - Finished smoking. Feed me more tar
-INFO Dealer - Placed Paper on table
-INFO NeedPaperSmoker - I am now smoking leave me alone
-INFO Dealer - Placed Match on table
-INFO NeedAMatchSmoker - I am now smoking leave me alone
+akka://Smokaz/user/table - Table now available
+akka://Smokaz/user/hasPaperSmoker - I am eagerly watching the table mr dealer. Please feed my cravings; I need: Cigarette, Match
+akka://Smokaz/user/hasCigsSmoker - I am eagerly watching the table mr dealer. Please feed my cravings; I need: Match, Paper
+akka://Smokaz/user/hasMatchesSmoker - I am eagerly watching the table mr dealer. Please feed my cravings; I need: Cigarette, Paper
+akka://Smokaz/user/dealer - About to start dealing to the smokaz
+akka://Smokaz/user/dealer - Placed Match on table
+akka://Smokaz/user/table - Match now on table
+akka://Smokaz/user/table - akka://Smokaz/user/hasCigsSmoker got the Match off the table
+akka://Smokaz/user/dealer - Placed Match on table
+akka://Smokaz/user/table - Match now on table
+akka://Smokaz/user/table - akka://Smokaz/user/hasPaperSmoker got the Match off the table
+akka://Smokaz/user/dealer - Placed Paper on table
+akka://Smokaz/user/table - Paper now on table
+akka://Smokaz/user/table - akka://Smokaz/user/hasMatchesSmoker got the Paper off the table
+akka://Smokaz/user/dealer - Placed Cigarette on table
+akka://Smokaz/user/table - Cigarette now on table
+akka://Smokaz/user/table - akka://Smokaz/user/hasMatchesSmoker got the Cigarette off the table
+
 ```
