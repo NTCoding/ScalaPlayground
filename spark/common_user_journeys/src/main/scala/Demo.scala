@@ -31,11 +31,11 @@ object Demo {
 
     // use second item in journey tuples to count occurences of that journey
     val commonJourneysWithTotals = journeys.reduceByKey((count1, count2) => count1 + count2)
-                                           .sortBy(_._2) // sort by count
+                                           .sortBy(-_._2) // sort by count descending
 
     // print the results to the console
     commonJourneysWithTotals.take(10).foreach { j =>
-      val journey = j._1
+      val journey = j._1.replace("http://", "") // easier to discern in console
       val count = j._2
       println(s"$count - $journey")
     }
