@@ -3,3 +3,17 @@
 { "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=lean-analytics", "sessionId": "session1", "timestamp": "2015-01-07T05:09:40+00:00" }
 { "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=the-lean-startup", "sessionId": "session1", "timestamp": "2015-01-07T05:10:40+00:00" }
 { "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=business-model-generation", "sessionId": "session1", "timestamp": "2015-01-07T05:11:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk", "sessionId": "session2", "timestamp": "2015-01-08T03:07:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReviews", "sessionId": "session2", "timestamp": "2015-01-08T03:08:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=lean-analytics", "sessionId": "session2", "timestamp": "2015-01-08T03:09:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=the-lean-startup", "sessionId": "session2", "timestamp": "2015-01-08T03:10:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=business-model-generation", "sessionId": "session2", "timestamp": "2015-01-08T03:11:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk", "sessionId": "session3", "timestamp": "2015-01-08T09:07:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReviews", "sessionId": "session3", "timestamp": "2015-01-08T09:08:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=lean-analytics", "sessionId": "session3", "timestamp": "2015-01-08T09:09:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk", "sessionId": "session4", "timestamp": "2015-01-08T13:13:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReviews", "sessionId": "session4", "timestamp": "2015-01-07T13:14:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=the-lean-startup", "sessionId": "session4", "timestamp": "2015-01-07T13:15:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk", "sessionId": "session5", "timestamp": "2015-01-08T14:13:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReviews", "sessionId": "session5", "timestamp": "2015-01-07T14:14:40+00:00" }
+{ "event": "pageview", "url": "http://www.ntcoding.co.uk/bookReview?title=the-lean-startup", "sessionId": "session5", "timestamp": "2015-01-07T14:15:40+00:00" }

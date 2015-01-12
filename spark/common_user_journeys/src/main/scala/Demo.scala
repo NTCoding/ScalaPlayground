@@ -10,6 +10,7 @@ object Demo {
   Logger.getRootLogger.setLevel(Level.ERROR)
 
   def main(args: Array[String]): Unit = {
+    // this could also be an Amazon s3 file path. e.g: s3n://username:password@host/bucket/logfile.log.gz
     val testDataFilePath = this.getClass.getResource("sample_events.log").getPath
 
     val spark = createInMemorySparkInstance()
