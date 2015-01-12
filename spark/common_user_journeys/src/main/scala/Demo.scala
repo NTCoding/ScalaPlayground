@@ -29,6 +29,7 @@ object Demo {
 
     val sortedSessions = sortEachSessionChronologically(userSessions).filter(_._2.length > 0)
 
+    // the "1" is use to count the totals (see reduceByKey in the next step)
     val journeys: RDD[(String, Int)] = sortedSessions.map {
       s => (s._2.map(_.url.get).mkString(","), 1)
     }
