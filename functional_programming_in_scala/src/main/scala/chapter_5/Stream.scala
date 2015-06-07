@@ -1,6 +1,8 @@
 package chapter5
 
 sealed trait Stream[+A] {
+	import Stream._
+
 	def toList(): List[A] = this match {
 		case Empty =>
 			List.empty
@@ -36,6 +38,40 @@ sealed trait Stream[+A] {
 			println(h())
 			t().print
 	}}
+
+	def forAll(p: A => Boolean): Boolean = this match {
+		case Empty => false
+		case Cons(h, t) => p(h()) && (t() match {
+			case Empty => true
+			case s: Stream[A] => s.forAll(p)
+		})
+	}
+
+	def takeWhile(p: A => Boolean): Stream[A] = foldRight(Empty: Stream[A]) { (a, b) =>
+		if(p(a)) Cons(() => a, () => b) else b
+	}
+
+	def foldRight[B](z: => B)(f: (A, => B) => B): B = this match {
+		case Empty => z
+		case Cons(h, t) => f(h(), t().foldRight(z)(f))
+	}
+
+	def headOption(): Option[A] = foldRight(None: Option[A]) { (a, b) => Some(a)	}
+
+	def map[B](f: A => B): Stream[B] = {
+    foldRight(empty[B]) { (h,t) => 
+    	println(s"Mapping over: $h - $t")
+    	cons(f(h), t)
+	}}
+
+  def filter(f: A => Boolean): Stream[A] = {
+    foldRight(empty[A]) { (h,t) =>
+    	println(s"Filtering over: $h = $t")
+      if (f(h)) cons(h, t) else t
+    }
+  }
+
+  
 }
 
 case object Empty extends Stream[Nothing]
@@ -47,5 +83,17 @@ object Stream {
 		lazy val head = hd
 		lazy val tail = tl
 		Cons(() => head, () => tail)
+	}
+
+	def apply[A](as: A*): Stream[A] = {
+		if (as.isEmpty)	Empty
+		else cons(as.head, apply(as.tail:_*))
+	}
+
+	def empty[A]: Stream[A] = Empty
+
+	def constant[A](a: A): Stream[A] = {
+		val x = cons(a)
+		Cons(a, x)
 	}
 }
