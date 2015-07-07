@@ -54,7 +54,6 @@ sealed trait Stream[+A] {
 
 	def map[B](f: A => B): Stream[B] = {
     foldRight(empty[B]) { (h,t) => 
-    	println(s"Mapping over: $h - $t")
     	cons(f(h), t)
 	}}
 
@@ -136,6 +135,14 @@ sealed trait Stream[+A] {
  		}
  	}
 
+ 	def scanRight[B](s: B)(f: (A, B) => B): Stream[B] = {
+ 		tails.map { stream =>
+ 			stream.foldRight(stream) { (n,st) =>
+ 				f(n,st)
+ 			}
+ 		}
+ 	}
+
 }
 
 case object Empty extends Stream[Nothing]
@@ -199,5 +206,5 @@ object Stream {
 		case x: Any =>
 			println(x)
 	}}
-	
+
 }
