@@ -135,10 +135,10 @@ sealed trait Stream[+A] {
  		}
  	}
 
- 	def scanRight[B](s: B)(f: (A, B) => B): Stream[B] = {
+ 	def scanRight[B](s: B)(f: (A, => B) => B): Stream[B] = {
  		tails.map { stream =>
- 			stream.foldRight(stream) { (n,st) =>
- 				f(n,st)
+ 			stream.foldRight(s) { (ni, ns) =>
+ 				f(ni, ns)
  			}
  		}
  	}
