@@ -2,6 +2,8 @@ package chapter6
 
 object RNG {
 
+  type Rand[+A] = RNG => (A, RNG)
+
   def nonNegativeInt(rng: RNG): (Int, RNG) = {
     rng.nextInt match {
       case (Int.MinValue, rng2) => nonNegativeInt(rng2)
@@ -13,7 +15,10 @@ object RNG {
   def double(rng: RNG): (Double, RNG) = {
     val (i, rng2) = rng.nextInt
     val d = i.toDouble
-    def between0and1(dub: Double): Double = {
+    (between0and1(d), rng2)
+  }
+
+  def between0and1(dub: Double): Double = {
       println(s"Checking $dub")
       dub match {
         case small if (small < 0) => between0and1(-small)
@@ -21,8 +26,6 @@ object RNG {
         case good => good
       }
     }
-    (between0and1(d), rng2)
-  }
 
   def intDouble(rng: RNG): ((Int, Double), RNG) = {
     val (int, rng2) = rng.nextInt
@@ -47,6 +50,33 @@ object RNG {
     (1 to count).foldLeft((List.empty[Int], rng)) { (s, n) =>
       val (i, nxtRng) = s._2.nextInt
       (s._1 :+ i, nxtRng)
+    }
+  }
+
+  def doubleViaMap(): Rand[Double] = {
+    map(nonNegativeInt)(x => between0and1(x.toDouble))
+  }
+
+  def map[A,B](s: Rand[A])(f: A => B): Rand[B] =
+    rng => {
+      val (a, rng2) = s(rng)
+      (f(a), rng2)
+  }
+
+  def map2[A, B, C](ra: Rand[A], rb: Rand[B])(f: (A, B) => C): Rand[C] = {
+    rng => {
+      val (a, rnga2) = ra(rng)
+      val (b, rngb2) = rb(rnga2)
+      (f(a, b), rngb2)
+    }
+  }
+
+  def sequence[A](fs: List[Rand[A]]): Rand[List[A]] = {
+    rng => {
+      fs.foldLeft((List.empty: List[A], rng))( (s,v) => {
+        val (a, nrng) = v(s._2)
+        (s._1 :+ a, nrng)
+      })
     }
   }
 
