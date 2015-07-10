@@ -18,6 +18,10 @@ object RNG {
     (between0and1(d), rng2)
   }
 
+  def doubleViaMap: Rand[Double] = {
+    map(_.nextInt)(x => between0and1(x.toDouble))
+  }
+
   def between0and1(dub: Double): Double = {
       println(s"Checking $dub")
       dub match {
@@ -53,10 +57,6 @@ object RNG {
     }
   }
 
-  def doubleViaMap(): Rand[Double] = {
-    map(nonNegativeInt)(x => between0and1(x.toDouble))
-  }
-
   def map[A,B](s: Rand[A])(f: A => B): Rand[B] =
     rng => {
       val (a, rng2) = s(rng)
@@ -80,6 +80,12 @@ object RNG {
     }
   }
 
+ def flatMap[A,B](f: Rand[A])(g: A => Rand[B]): Rand[B] =
+    rng => {
+      val (a, r1) = f(rng)
+      g(a)(r1) // We pass the new state along
+    }
+
 }
 
 trait RNG {
@@ -94,3 +100,46 @@ case class SimpleRNG(seed: Long) extends RNG {
   (n, nextRNG)
   }
 }
+
+object State {
+
+  def unit[S, A](a: A): State[S, A] =  State(s => (a, s))
+
+  def sequence[S,A](fs: List[State[S,A]]): State[S, List[A]] = {
+    val l: List[A] = List.empty
+    State(s => {
+      fs.foldLeft((l,s)) { (ns: (List[A], S), nv: State[S,A]) =>
+        val (na,nns) = nv.run(ns._2)
+        (ns._1 :+ na,nns)
+      }
+    })
+  }
+}
+
+case class State[S, +A](run: S => (A,S)) {
+
+  def map[B](f: A => B): State[S,B] = {
+    State(s => {
+      val (a, ns) = run(s)
+      (f(a), ns)
+    })
+  }
+
+  def map2[B,C](sb: State[S,B])(f: (A,B) => C): State[S,C] = {
+    State(s => {
+      val (nva, nsa) = run(s)
+      val (nvb, nsb) = sb.run(nsa)
+      (f(nva,nvb), nsb)
+    })
+  }
+
+  def flatMap[B](f: A => State[S,B]): State[S,B] = {
+    State(s => {
+      val (a,ns) = run(s)
+      val sb = f(a)
+      sb.run(ns)
+    })
+  }
+
+}
+
