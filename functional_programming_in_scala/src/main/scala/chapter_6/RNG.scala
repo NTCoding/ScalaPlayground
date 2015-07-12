@@ -114,6 +114,16 @@ object State {
       }
     })
   }
+
+
+  def modify[S](f: S => S): State[S, Unit] = for {
+    s <- get // Gets the current state and assigns it to `s`.
+    _ <- set(f(s)) // Sets the new state to `f` applied to `s`.
+  } yield ()
+
+  def get[S]: State[S, S] = State(s => (s, s))
+
+  def set[S](s: S): State[S, Unit] = State(_ => ((), s))
 }
 
 case class State[S, +A](run: S => (A,S)) {
@@ -139,7 +149,60 @@ case class State[S, +A](run: S => (A,S)) {
       val sb = f(a)
       sb.run(ns)
     })
-  }
+ }
 
 }
 
+sealed trait Input
+case object Coin extends Input
+case object Turn extends Input
+
+object Candy {
+  def update = (i: Input) => (s: Machine) =>
+    (i, s) match {
+      case (_, Machine(_, 0, _)) => s
+      case (Coin, Machine(false, _, _)) => s
+      case (Turn, Machine(true, _, _)) => s
+      case (Coin, Machine(true, candy, coin)) =>
+        Machine(false, candy, coin + 1)
+      case (Turn, Machine(false, candy, coin)) =>
+        Machine(true, candy - 1, coin)
+    }
+}
+
+case class Machine(locked: Boolean, candies: Int, coins: Int) {
+  
+  def apply(i: Input) = i match {
+    case Coin => insertCoin
+    case Turn => turnKnob
+  }
+  
+  private def insertCoin: Machine = if (candies == 0) this else locked match {
+    case true if candies >= 1 => unlock
+    case _ => this
+  }
+
+  private def unlock: Machine = this.copy(locked = false)
+
+  private def turnKnob: Machine = if (candies == 0) this else locked match {
+    case false => dispenseAndLock
+    case true => this
+  }
+
+  private def dispenseAndLock: Machine = this.copy(locked = true, candies = candies - 1)
+  
+}
+
+/*
+object machine {
+  def simulateMachine(inputs: List[Input]): State[Machine, (Int, Int)] = {
+    val st = State.unit[Machine, (Int, Int)]((0, 0))
+    inputs.foldLeft(st) { (nv: Input, ns: (State[Machine, (Int, Int)])) =>
+      ns.map(machine => {
+        val newMac = machine(nv)
+        (newMac.candies, newMac.coins)
+      })
+    }
+  }
+}
+*/
