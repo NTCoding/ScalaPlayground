@@ -1,22 +1,33 @@
-import org.scalatest.prop.TableDrivenPropertyChecks._
-import org.scalatest.{Matchers, FreeSpec}
+import org.scalatest.{FreeSpec, Matchers}
 
 import scala.annotation.tailrec
+import scala.io.Source
 
 class DjikstraSpec extends FreeSpec with Matchers {
   import Djikstra.Vertex
 
-  val examples = Table(
-    ("Graph", "Source", "Shortest path weights", "Shortest path previous nodes"),
-    (Array(Vertex(0, 1, 5), Vertex(0, 2, 3)), 0, Array(0, 5, 3), Array(Djikstra.noNode, 0, 0))
-    // Larger graphs
-    // Source is not 0
-  )
+  "finds shortest path from source to each non-source node and penultimate node on path" - {
 
-  "Finds the shortest path from source to each non-source node" in {
-    forAll(examples) { (graph, source, shortestPathWeights, shortestPathPreviousNodes) =>
-      assert(Djikstra(graph, source).weights === shortestPathWeights)
-      assert(Djikstra(graph, source).previousNodes === shortestPathPreviousNodes)
+    "for graph with 3 nodes and only 1 path to each" in {
+      val graph = Array(Vertex(0, 1, 5), Vertex(0, 2, 3))
+      assert(Djikstra(graph, 0).weights === Array(0, 5, 3))
+      assert(Djikstra(graph, 0).previousNodes === Array(Djikstra.noNode, 0, 0))
+    }
+
+    "for a 3-level deep graph with only 1 path to each node (a tree)" in {
+      val graph = Array(
+        Vertex(0, 1, 5), Vertex(1, 2, 4), Vertex(1, 3, 3), Vertex(0, 4, 6), Vertex(4, 5, 7), Vertex(4, 6, 25)
+      )
+      assert(Djikstra(graph, 0).weights === Array(0, 5, 9, 8, 6, 13, 31))
+      assert(Djikstra(graph, 0).previousNodes === Array(Djikstra.noNode, 0, 1, 1, 0, 4, 4))
+    }
+
+    "for a 3-level deep graph with only 1 path to each node when the source is not 0" in {
+      val graph = Array(
+        Vertex(0, 4, 6), Vertex(4, 5, 7), Vertex(4, 6, 25), Vertex(1, 0, 5), Vertex(1, 3, 3), Vertex(2, 1, 4)
+      )
+      assert(Djikstra(graph, 2).weights === Array(9, 4, 0, 7, 15, 22, 40))
+      assert(Djikstra(graph, 2).previousNodes === Array(1, 2, Djikstra.noNode, 1, 0, 4, 4))
     }
   }
 }
@@ -33,20 +44,23 @@ object Djikstra {
   val noNode = -33
 
   def apply(graph: Array[Vertex], source: Int): ShortestPaths =
-    findShortestPaths(Array(Vertex(0, 0, 0)) ++ graph, initialiseShortestPaths(graph))
+    findShortestPaths(graph :+ Vertex(source, source, 0), initialiseShortestPaths(graph, source))
 
-  private def initialiseShortestPaths(graph: Array[Vertex]) =
-    ShortestPaths(Array(0) ++ (1 to graph.length).map(_ => Djikstra.infinity), (0 to graph.length).map(_ => Djikstra.noNode).toArray)
+  private def initialiseShortestPaths(graph: Array[Vertex], source: Int) =
+    ShortestPaths(
+      Array.fill(graph.length + 1)(Djikstra.infinity).updated(source, 0),
+      Array.fill(graph.length + 1)(Djikstra.noNode)
+    )
 
   @tailrec
   private def findShortestPaths(unchecked: Array[Vertex], shortestPaths: ShortestPaths): ShortestPaths =
     unchecked.isEmpty match {
       case true => shortestPaths
       case false =>
-        val shortestPathVertex = unchecked.map(v => (v, shortestPaths.weights(v.start))).sortBy(-_._2).head._1
+        val shortestPathVertex = unchecked.map(v => (v, shortestPaths.weights(v.end))).sortBy(_._2).head._1
         val adjacent = unchecked.filter(_.start == shortestPathVertex.end)
         val sps = relax(shortestPathVertex, adjacent, shortestPaths)
-        findShortestPaths(unchecked.tail, sps)
+        findShortestPaths(unchecked.filterNot(_ == shortestPathVertex), sps)
     }
 
   @tailrec
