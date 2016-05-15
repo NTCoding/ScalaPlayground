@@ -1,0 +1,30 @@
+Web Crawler
+###########
+
+Given a starting URL, crawls each link in the page and produces a hierarchical sitemap, for each page showing:
+- links to other pages on the same domain
+- links to static assets (style sheets, images, JS)
+- links to external pages
+
+The output of the sitemap is a flat list of pages, rather than a hierarchy. This is due to the difficulty in inferring hierarchy from circular references.
+
+The crawler will not crawl any external pages - sites under a different domain.
+
+
+To Run the Application
+######################
+
+- ```./activator run``` and follow the commands prompts
+- ```./activator test``` to run the test
+
+At minimum you will need a JDK installed.
+
+
+Implementation Notes
+####################
+
+- Since this crawler is only intended to scan a single domain it is single-threaded and cares little about performance.
+- Since the main class is barely 100 lines of code I'm content to keep it all inside a single for now. At this scale I don't feel the need for SOLID
+- For the reasons above I'm content to not have any unit tests and rely only on acceptance tests at this stage
+- At this time it does not understand subdomains e.g. "http://www.domain" is not treated as part of "http://domain"
+- Doesn't really understand HTTPs
